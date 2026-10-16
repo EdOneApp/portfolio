@@ -1,0 +1,60 @@
+.section {
+  padding: 0 var(--container-padding) var(--section-padding);
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.heading {
+  font-size: 0.85em;
+  color: var(--color-gray);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.4em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--color-border);
+  border: 1px solid var(--color-border);
+}
+
+.card {
+  background: var(--color-dark);
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.cardTitle {
+  font-size: 1.15em;
+  font-weight: 450;
+}
+
+.cardSub {
+  color: var(--color-blue);
+  font-size: 0.82em;
+}
+
+.cardDate {
+  color: var(--color-gray);
+  font-size: 0.78em;
+}
+
+.cardText {
+  color: var(--color-lightgray);
+  font-size: 0.9em;
+  font-weight: 300;
+  margin-top: 0.4em;
+}
+
+@media screen and (max-width: 720px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

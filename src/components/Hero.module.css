@@ -1,0 +1,175 @@
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  background: var(--color-dark);
+  padding-bottom: 2.4em;
+}
+
+.imageWrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.imageWrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(28, 29, 32, 0.15) 0%,
+    rgba(28, 29, 32, 0.35) 55%,
+    rgba(28, 29, 32, 0.96) 100%
+  );
+}
+
+.imageWrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.badge {
+  position: relative;
+  z-index: 1;
+  margin: 0 var(--container-padding);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  width: fit-content;
+  padding: 0.5em 1.1em;
+  border-radius: 100px;
+  border: 1px solid var(--color-border-light);
+  background: rgba(20, 21, 23, 0.5);
+  backdrop-filter: blur(6px);
+  font-size: 0.78em;
+  color: var(--color-white);
+  margin-bottom: 1.4em;
+}
+
+.dot {
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 50%;
+  background: #24c958;
+  flex-shrink: 0;
+}
+
+.nameRow {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  margin: 0 calc(var(--container-padding) * -1) 0;
+  padding: 0 var(--container-padding);
+}
+
+.name {
+  font-size: clamp(3.2rem, 11vw, 9.5rem);
+  font-weight: 450;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+  white-space: nowrap;
+}
+
+.subRow {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2em;
+  margin: 0 var(--container-padding);
+  margin-top: 1.4em;
+  flex-wrap: wrap;
+}
+
+.role {
+  font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+  color: var(--color-lightgray);
+  max-width: 28em;
+  font-weight: 300;
+}
+
+.role strong {
+  font-weight: 450;
+  color: var(--color-white);
+}
+
+.statsRow {
+  display: flex;
+  gap: 2.2em;
+}
+
+.stat h3 {
+  font-size: clamp(1.4rem, 2.6vw, 2rem);
+  color: var(--color-blue);
+  font-weight: 450;
+}
+
+.stat p {
+  font-size: 0.75em;
+  color: var(--color-gray);
+  margin-top: 0.2em;
+  max-width: 9em;
+}
+
+.scrollCue {
+  position: absolute;
+  bottom: 2em;
+  right: var(--container-padding);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  font-size: 0.75em;
+  color: var(--color-gray);
+  writing-mode: vertical-rl;
+}
+
+.scrollLine {
+  width: 1px;
+  height: 3em;
+  background: var(--color-border-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.scrollLine span {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-blue);
+  animation: scrollDown 1.8s ease-in-out infinite;
+}
+
+@keyframes scrollDown {
+  0% {
+    top: -100%;
+  }
+  60% {
+    top: 100%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .subRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .statsRow {
+    gap: 1.4em;
+  }
+  .scrollCue {
+    display: none;
+  }
+}

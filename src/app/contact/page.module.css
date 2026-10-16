@@ -1,0 +1,69 @@
+.grid {
+  padding: 0 var(--container-padding) var(--section-padding);
+  max-width: 1600px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4em;
+}
+
+.directRow {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin-top: 2.5em;
+  padding-top: 2em;
+  border-top: 1px solid var(--color-border);
+}
+
+.directLink {
+  font-size: 1.1em;
+  color: var(--color-lightgray);
+}
+
+.directLink strong {
+  color: var(--color-white);
+  margin-right: 0.5em;
+}
+
+.directLink a:hover {
+  color: var(--color-blue);
+}
+
+.calSection {
+  padding: 0 var(--container-padding) var(--section-padding);
+  max-width: 1200px;
+  margin: 0 auto;
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--section-padding);
+}
+
+.calHeading {
+  font-size: 0.85em;
+  color: var(--color-gray);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.6em;
+}
+
+.calTitle {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 450;
+  margin-bottom: 1.6em;
+  max-width: 20em;
+}
+
+.calWrap {
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--color-dark-dark);
+  border: 1px solid var(--color-border);
+  min-height: 640px;
+}
+
+@media screen and (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2.5em;
+  }
+}

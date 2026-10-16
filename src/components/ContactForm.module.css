@@ -1,0 +1,104 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8em;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5em;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.label {
+  font-size: 0.8em;
+  color: var(--color-gray);
+}
+
+.input,
+.select,
+.textarea {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-border-light);
+  color: var(--color-white);
+  font-family: inherit;
+  font-size: 1.1em;
+  padding: 0.5em 0;
+  transition: var(--animation-fast);
+}
+
+.select option {
+  background: var(--color-dark);
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  outline: none;
+  border-color: var(--color-blue);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 7em;
+}
+
+.pillGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6em;
+}
+
+.pill {
+  font-size: 0.82em;
+  padding: 0.5em 1.1em;
+  border-radius: 100px;
+  border: 1px solid var(--color-border-light);
+  background: none;
+  color: var(--color-lightgray);
+  cursor: pointer;
+  font-family: inherit;
+  transition: var(--animation-fast);
+}
+
+.pill[data-active="true"] {
+  background: var(--color-blue);
+  border-color: var(--color-blue);
+  color: var(--color-white);
+}
+
+.submit {
+  align-self: flex-start;
+  margin-top: 0.6em;
+  padding: 1em 2.4em;
+  border-radius: 100px;
+  background: var(--color-blue);
+  color: var(--color-white);
+  font-size: 0.95em;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: var(--animation-fast);
+}
+
+.submit:hover {
+  background: var(--color-blue-dark);
+}
+
+.successMsg {
+  color: var(--color-blue);
+  font-size: 0.95em;
+}
+
+@media screen and (max-width: 640px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}

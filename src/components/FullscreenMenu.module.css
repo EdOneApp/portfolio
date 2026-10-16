@@ -1,0 +1,70 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: var(--color-dark-dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 var(--container-padding);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1em;
+}
+
+.item {
+  overflow: hidden;
+}
+
+.link {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5em;
+  font-size: clamp(2.4rem, 9vw, 6rem);
+  font-weight: 450;
+  letter-spacing: -0.02em;
+  color: var(--color-white);
+  opacity: 0.4;
+  transition: var(--animation-fast);
+}
+
+.link:hover {
+  opacity: 1;
+  color: var(--color-blue);
+}
+
+.index {
+  font-size: 0.3em;
+  color: var(--color-blue);
+  font-weight: 450;
+}
+
+.footerRow {
+  position: absolute;
+  bottom: 2.4em;
+  left: var(--container-padding);
+  right: var(--container-padding);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1em;
+  color: var(--color-gray);
+  font-size: 0.82em;
+}
+
+.footerRow a {
+  color: var(--color-white);
+  opacity: 0.75;
+}
+
+.footerRow a:hover {
+  opacity: 1;
+}
+
+.socials {
+  display: flex;
+  gap: 1.4em;
+}

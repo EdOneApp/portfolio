@@ -1,0 +1,31 @@
+.header {
+  padding: calc(var(--nav-height) + 4em) var(--container-padding) 3em;
+}
+
+.inner {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  color: var(--color-blue);
+  font-size: 0.85em;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.8em;
+}
+
+.title {
+  font-size: clamp(2.6rem, 7vw, 5.5rem);
+  font-weight: 450;
+  letter-spacing: -0.02em;
+  max-width: 16em;
+}
+
+.intro {
+  margin-top: 1em;
+  max-width: 34em;
+  font-size: 1.15em;
+  font-weight: 300;
+  color: var(--color-lightgray);
+}

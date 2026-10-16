@@ -1,0 +1,33 @@
+.section {
+  padding: var(--section-padding) var(--container-padding);
+}
+
+.inner {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.headRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.heading {
+  font-size: 0.85em;
+  color: var(--color-gray);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.viewAll {
+  font-size: 0.9em;
+  color: var(--color-white);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.viewAll:hover {
+  color: var(--color-blue);
+  border-color: var(--color-blue);
+}
