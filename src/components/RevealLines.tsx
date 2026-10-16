@@ -18,7 +18,7 @@ export default function RevealLines({
   className,
   as: Tag = "h2",
 }: {
-  lines: string[];
+  lines: React.ReactNode[];
   className?: string;
   as?: "h1" | "h2" | "h3" | "h4" | "p";
 }) {

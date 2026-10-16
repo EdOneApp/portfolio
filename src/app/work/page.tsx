@@ -12,11 +12,7 @@ export const metadata: Metadata = {
 export default function WorkPage() {
   return (
     <>
-      <PageHeader
-        eyebrow="Projets"
-        title={["Des systèmes", "en production."]}
-        intro="16+ projets livrés pour des plateformes fintech, des ERP et des produits SaaS, aujourd'hui utilisés en production."
-      />
+      <PageHeader title={["Créer des produits", "numériques solides."]} />
       <WorkGrid projects={projects} />
     </>
   );

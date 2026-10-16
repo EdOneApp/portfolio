@@ -36,24 +36,40 @@ export default function ContactForm() {
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
-      <div className={styles.row}>
-        <label className={styles.field}>
-          <span className={styles.label}>Votre nom *</span>
-          <input className={styles.input} type="text" name="name" required placeholder="Jean Dupont" />
+      <div className={styles.field}>
+        <span className={styles.number}>01</span>
+        <label className={styles.label} htmlFor="name">
+          Votre nom ?
         </label>
-        <label className={styles.field}>
-          <span className={styles.label}>Votre email *</span>
-          <input className={styles.input} type="email" name="email" required placeholder="jean@entreprise.com" />
-        </label>
+        <input className={styles.input} type="text" id="name" name="name" required placeholder="Jean Dupont *" />
       </div>
 
-      <label className={styles.field}>
-        <span className={styles.label}>Organisation</span>
-        <input className={styles.input} type="text" name="company" placeholder="Nom de votre entreprise" />
-      </label>
+      <div className={styles.field}>
+        <span className={styles.number}>02</span>
+        <label className={styles.label} htmlFor="email">
+          Votre email ?
+        </label>
+        <input
+          className={styles.input}
+          type="email"
+          id="email"
+          name="email"
+          required
+          placeholder="jean@entreprise.com *"
+        />
+      </div>
 
       <div className={styles.field}>
-        <span className={styles.label}>Catégorie de service</span>
+        <span className={styles.number}>03</span>
+        <label className={styles.label} htmlFor="company">
+          Le nom de votre organisation ?
+        </label>
+        <input className={styles.input} type="text" id="company" name="company" placeholder="Nom de l'entreprise" />
+      </div>
+
+      <div className={styles.field}>
+        <span className={styles.number}>04</span>
+        <label className={styles.label}>Quel service recherchez-vous ?</label>
         <div className={styles.pillGroup}>
           {contactCategories.map((c) => (
             <button
@@ -67,10 +83,6 @@ export default function ContactForm() {
             </button>
           ))}
         </div>
-      </div>
-
-      <div className={styles.field}>
-        <span className={styles.label}>Délai souhaité</span>
         <div className={styles.pillGroup}>
           {contactTimeframes.map((t) => (
             <button
@@ -86,19 +98,25 @@ export default function ContactForm() {
         </div>
       </div>
 
-      <label className={styles.field}>
-        <span className={styles.label}>Votre message *</span>
+      <div className={styles.field}>
+        <span className={styles.number}>05</span>
+        <label className={styles.label} htmlFor="message">
+          Votre message
+        </label>
         <textarea
           className={styles.textarea}
+          id="message"
           name="message"
           required
-          placeholder="Bonjour Daniel, j'aimerais échanger sur..."
+          placeholder="Bonjour Daniel, j'aimerais échanger sur... *"
         />
-      </label>
+      </div>
 
-      <button type="submit" className={styles.submit}>
-        Envoyer le message
-      </button>
+      <div className={styles.submitWrap}>
+        <button type="submit" className={styles.submit}>
+          Envoyer !
+        </button>
+      </div>
     </form>
   );
 }

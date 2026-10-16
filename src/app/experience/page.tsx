@@ -12,11 +12,7 @@ export const metadata: Metadata = {
 export default function ExperiencePage() {
   return (
     <>
-      <PageHeader
-        eyebrow="Parcours"
-        title={["Expérience", "professionnelle"]}
-        intro="Six ans à concevoir, livrer et faire évoluer des systèmes en production — du développement mobile aux responsabilités de Tech Lead."
-      />
+      <PageHeader title={["Expérience", "professionnelle"]} />
       <Timeline
         items={journey.map((j) => ({
           period: j.period,

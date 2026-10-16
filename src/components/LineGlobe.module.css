@@ -1,0 +1,5 @@
+.section {
+  padding: 3em var(--container-padding);
+  display: flex;
+  justify-content: center;
+}

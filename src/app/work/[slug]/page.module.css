@@ -1,15 +1,7 @@
-.hero {
-  padding: calc(var(--nav-height) + 3.5em) var(--container-padding) 2em;
-  max-width: 1600px;
+.header {
+  padding: calc(var(--nav-height) + 5em) var(--container-padding) 0;
+  max-width: 1200px;
   margin: 0 auto;
-}
-
-.eyebrow {
-  color: var(--color-blue);
-  font-size: 0.85em;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 0.8em;
 }
 
 .title {
@@ -18,55 +10,80 @@
   letter-spacing: -0.02em;
 }
 
-.metaRow {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  flex-wrap: wrap;
-  gap: 1.5em;
-  margin-top: 1.6em;
+.intro {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5em var(--container-padding);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2em;
 }
 
-.description {
-  max-width: 42em;
-  font-size: 1.15em;
-  font-weight: 300;
+.introCol h5 {
+  color: var(--color-gray);
+  font-size: 0.78em;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.6em;
+}
+
+.introStripe {
+  width: 2.4em;
+  height: 1px;
+  background: var(--color-border-light);
+  margin-bottom: 1em;
+}
+
+.introCol p {
+  font-size: 0.95em;
   color: var(--color-lightgray);
 }
 
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6em;
+.introCol p + p {
+  margin-top: 0.2em;
 }
 
-.tag {
+.statsRow {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--container-padding) 2em;
+  display: flex;
+  gap: 2.5em;
+  flex-wrap: wrap;
+}
+
+.stat h3 {
+  font-size: 1.8em;
+  color: var(--color-blue);
+  font-weight: 450;
+}
+
+.stat p {
   font-size: 0.78em;
   color: var(--color-gray);
-  border: 1px solid var(--color-border);
-  border-radius: 100px;
-  padding: 0.35em 0.9em;
 }
 
-.award {
-  display: inline-block;
-  margin-top: 1em;
-  font-size: 0.85em;
-  color: var(--color-blue);
+.imageSection {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 var(--container-padding) var(--section-padding);
 }
 
-.cta {
+.btnWrap {
+  margin-bottom: 1.6em;
+}
+
+.liveBtn {
   display: inline-flex;
   align-items: center;
   gap: 0.6em;
-  margin-top: 1.4em;
   padding: 0.9em 1.6em;
   border-radius: 100px;
   background: var(--color-blue);
   font-size: 0.9em;
 }
 
-.cta:hover {
+.liveBtn:hover {
   background: var(--color-blue-dark);
 }
 
@@ -77,8 +94,6 @@
   border-radius: 14px;
   overflow: hidden;
   background: var(--color-dark-dark);
-  margin: 3em auto 0;
-  max-width: 1600px;
 }
 
 .heroImage img {
@@ -97,23 +112,6 @@
   font-size: clamp(2rem, 6vw, 4rem);
   font-weight: 450;
   color: rgba(255, 255, 255, 0.5);
-}
-
-.statsRow {
-  display: flex;
-  gap: 2.5em;
-  margin-top: 2em;
-  flex-wrap: wrap;
-}
-
-.stat h3 {
-  font-size: 1.6em;
-  color: var(--color-blue);
-}
-
-.stat p {
-  font-size: 0.78em;
-  color: var(--color-gray);
 }
 
 .devicesSection {
@@ -158,6 +156,10 @@
 }
 
 @media screen and (max-width: 720px) {
+  .intro {
+    grid-template-columns: 1fr;
+    gap: 1.4em;
+  }
   .devicesGrid[data-with-phone="true"] {
     grid-template-columns: 1fr;
   }

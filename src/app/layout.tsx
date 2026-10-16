@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import PageTransition from "@/components/PageTransition";
 import { profile } from "@/data/content";
 import "@/styles/tokens.css";
 
@@ -34,8 +35,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr" className={neueMontreal.variable}>
+    <html lang="fr" className={neueMontreal.variable} data-scroll-behavior="smooth">
       <body>
+        <PageTransition />
         <Nav />
         <main>{children}</main>
         <Footer />

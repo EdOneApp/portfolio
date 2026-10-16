@@ -12,11 +12,7 @@ export const metadata: Metadata = {
 export default function EducationPage() {
   return (
     <>
-      <PageHeader
-        eyebrow="Formation"
-        title={["Parcours", "académique"]}
-        intro="Des bases de données au génie logiciel, un parcours académique construit en parallèle d'une activité professionnelle continue."
-      />
+      <PageHeader title={["Parcours", "académique"]} />
       <Timeline
         items={degrees.map((d) => ({
           period: d.year,

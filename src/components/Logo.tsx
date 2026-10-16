@@ -9,7 +9,7 @@ export default function Logo() {
       <span className={styles.mark}>DG</span>
       <span className={styles.textWrap}>
         <span className={styles.name}>Daniel Guedegbe</span>
-        <span className={styles.role}>Ingénieur Logiciel Full Stack</span>
+        <span className={styles.role}>Full Stack Senior</span>
       </span>
     </MagneticLink>
   );

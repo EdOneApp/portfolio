@@ -12,11 +12,7 @@ export const metadata: Metadata = {
 export default function CertificationsPage() {
   return (
     <>
-      <PageHeader
-        eyebrow="Reconnaissances"
-        title={["Certifications", "& distinctions"]}
-        intro="Des certifications techniques aux podiums de hackathons : une validation continue, par la pratique et par les pairs."
-      />
+      <PageHeader title={["Certifications", "& distinctions"]} />
       <CardGrid
         heading="Certifications"
         cards={certifications.map((c) => ({ title: c.title, subtitle: c.issuer }))}

@@ -294,6 +294,7 @@ export const projects: Project[] = [
       "Boutique en ligne pour clubs, académies et athlètes de Côte d'Ivoire. Ventes flash avec compte à rebours, catalogue segmenté, paiement mobile sécurisé via Wave, livraison à Abidjan.",
     tags: ["E-commerce", "Ventes flash", "Paiement Wave"],
     link: "https://sportifafrica.com/",
+    image: "/images/sportif.png",
     stats: [
       { value: "500+", label: "Clubs équipés" },
       { value: "12K+", label: "Produits livrés" },

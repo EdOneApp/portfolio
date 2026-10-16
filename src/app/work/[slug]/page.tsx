@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { projects, profile } from "@/data/content";
 import Reveal from "@/components/Reveal";
+import RevealLines from "@/components/RevealLines";
 import DeviceFrame from "@/components/DeviceFrame";
 import styles from "./page.module.css";
 
@@ -36,62 +37,60 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
   return (
     <>
-      <div className={styles.hero}>
-        <Reveal>
-          <p className={styles.eyebrow}>{project.category}</p>
-        </Reveal>
-        <Reveal delay={0.05}>
-          <h1 className={styles.title}>{project.title}</h1>
-        </Reveal>
+      <div className={styles.header}>
+        <RevealLines as="h1" className={styles.title} lines={[project.title]} />
+      </div>
 
-        <div className={styles.metaRow}>
-          <Reveal delay={0.1}>
-            <p className={styles.description}>{project.description}</p>
-          </Reveal>
-          <Reveal delay={0.15} className={styles.tags}>
-            {project.tags.map((t) => (
-              <span className={styles.tag} key={t}>
-                {t}
-              </span>
-            ))}
-          </Reveal>
+      <div className={styles.intro}>
+        <Reveal className={styles.introCol}>
+          <h5>Catégorie</h5>
+          <div className={styles.introStripe} />
+          <p>{project.category}</p>
+        </Reveal>
+        <Reveal delay={0.05} className={styles.introCol}>
+          <h5>Stack</h5>
+          <div className={styles.introStripe} />
+          {project.tags.map((t) => (
+            <p key={t}>{t}</p>
+          ))}
+        </Reveal>
+        <Reveal delay={0.1} className={styles.introCol}>
+          <h5>{project.award ? "Récompense" : "Statut"}</h5>
+          <div className={styles.introStripe} />
+          <p>{project.award ?? "En production"}</p>
+        </Reveal>
+      </div>
+
+      {project.stats && (
+        <div className={styles.statsRow}>
+          {project.stats.map((s) => (
+            <Reveal key={s.label} className={styles.stat}>
+              <h3>{s.value}</h3>
+              <p>{s.label}</p>
+            </Reveal>
+          ))}
         </div>
+      )}
 
-        {project.award && (
-          <Reveal delay={0.2}>
-            <span className={styles.award}>{project.award}</span>
-          </Reveal>
-        )}
-
+      <div className={styles.imageSection}>
         {project.link && (
-          <Reveal delay={0.25}>
-            <a className={styles.cta} href={project.link} target="_blank" rel="noopener noreferrer">
+          <Reveal className={styles.btnWrap}>
+            <a className={styles.liveBtn} href={project.link} target="_blank" rel="noopener noreferrer">
               {project.linkLabel ?? "Voir le site"} ↗
             </a>
           </Reveal>
         )}
 
-        {project.stats && (
-          <div className={styles.statsRow}>
-            {project.stats.map((s) => (
-              <Reveal key={s.label} className={styles.stat}>
-                <h3>{s.value}</h3>
-                <p>{s.label}</p>
-              </Reveal>
-            ))}
-          </div>
+        {project.image ? (
+          <Reveal y={40} className={styles.heroImage}>
+            <Image src={project.image} alt={project.title} fill sizes="100vw" priority />
+          </Reveal>
+        ) : (
+          <Reveal y={40} className={styles.heroImage}>
+            <div className={styles.heroFallback}>{project.title}</div>
+          </Reveal>
         )}
       </div>
-
-      {project.image ? (
-        <Reveal y={40} className={styles.heroImage}>
-          <Image src={project.image} alt={project.title} fill sizes="100vw" priority />
-        </Reveal>
-      ) : (
-        <Reveal y={40} className={styles.heroImage}>
-          <div className={styles.heroFallback}>{project.title}</div>
-        </Reveal>
-      )}
 
       {project.image && (
         <div className={styles.devicesSection}>

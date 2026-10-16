@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import PageHeader from "@/components/PageHeader";
+import LineGlobe from "@/components/LineGlobe";
 import AboutIntro from "@/components/AboutIntro";
-import Manifesto from "@/components/Manifesto";
-import SkillsGrid from "@/components/SkillsGrid";
-import Testimonials from "@/components/Testimonials";
+import AboutServices from "@/components/AboutServices";
+import AboutAward from "@/components/AboutAward";
 import { profile } from "@/data/content";
 
 export const metadata: Metadata = {
@@ -14,15 +14,11 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <PageHeader
-        eyebrow="À propos"
-        title={["Ingénieur logiciel,", "pas magicien."]}
-        intro="Juste quelqu'un qui préfère les fondations solides aux promesses rapides."
-      />
+      <PageHeader title={["Concevoir des logiciels", "qui durent."]} />
+      <LineGlobe />
       <AboutIntro />
-      <Manifesto />
-      <SkillsGrid />
-      <Testimonials />
+      <AboutServices />
+      <AboutAward />
     </>
   );
 }

@@ -3,7 +3,8 @@
 import { useRef } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "motion/react";
-import { profile, hero } from "@/data/content";
+import { profile } from "@/data/content";
+import DigitalGlobe from "./DigitalGlobe";
 import styles from "./Hero.module.css";
 
 export default function Hero() {
@@ -28,52 +29,42 @@ export default function Hero() {
         />
       </motion.div>
 
+      <div className={styles.globeWrap}>
+        <DigitalGlobe />
+      </div>
+
       <motion.div
-        className={styles.badge}
+        className={styles.badgeRow}
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+      >
+        <span className={styles.badge}>
+          <span className={styles.dot} />
+          {profile.availabilityBadge}
+        </span>
+      </motion.div>
+
+      <motion.p
+        className={styles.subtitle}
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
-        <span className={styles.dot} />
-        {profile.availabilityBadge}
-      </motion.div>
+        <strong>{profile.role}</strong>
+      </motion.p>
 
       <div className={styles.nameRow}>
-        <motion.h1 className={styles.name} style={{ x: nameX }}>
+        <motion.h1
+          className={styles.name}
+          style={{ x: nameX }}
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+        >
           {profile.fullName}
+          <span>—</span>
         </motion.h1>
-      </div>
-
-      <div className={styles.subRow}>
-        <motion.p
-          className={styles.role}
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.3 }}
-        >
-          <strong>{profile.role}</strong> — {hero.bio}
-        </motion.p>
-
-        <motion.div
-          className={styles.statsRow}
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.4 }}
-        >
-          {hero.stats.map((stat) => (
-            <div className={styles.stat} key={stat.label}>
-              <h3>{stat.value}</h3>
-              <p>{stat.label}</p>
-            </div>
-          ))}
-        </motion.div>
-      </div>
-
-      <div className={styles.scrollCue}>
-        Scroll
-        <span className={styles.scrollLine}>
-          <span />
-        </span>
       </div>
     </section>
   );

@@ -1,64 +1,61 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 1.8em;
-}
-
-.row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5em;
 }
 
 .field {
   display: flex;
   flex-direction: column;
   gap: 0.5em;
+  padding: 1.6em 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.number {
+  color: var(--color-blue);
+  font-size: 0.8em;
 }
 
 .label {
-  font-size: 0.8em;
-  color: var(--color-gray);
+  font-size: 1.1em;
+  color: var(--color-white);
 }
 
 .input,
-.select,
 .textarea {
   background: transparent;
   border: none;
-  border-bottom: 1px solid var(--color-border-light);
   color: var(--color-white);
   font-family: inherit;
-  font-size: 1.1em;
-  padding: 0.5em 0;
-  transition: var(--animation-fast);
-}
-
-.select option {
-  background: var(--color-dark);
+  font-size: 1.05em;
+  padding: 0.3em 0 0;
 }
 
 .input:focus,
-.select:focus,
 .textarea:focus {
   outline: none;
-  border-color: var(--color-blue);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--color-gray);
 }
 
 .textarea {
   resize: vertical;
-  min-height: 7em;
+  min-height: 6em;
 }
 
 .pillGroup {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6em;
+  margin-top: 0.3em;
 }
 
 .pill {
-  font-size: 0.82em;
-  padding: 0.5em 1.1em;
+  font-size: 0.8em;
+  padding: 0.45em 1em;
   border-radius: 100px;
   border: 1px solid var(--color-border-light);
   background: none;
@@ -74,9 +71,11 @@
   color: var(--color-white);
 }
 
+.submitWrap {
+  padding-top: 2em;
+}
+
 .submit {
-  align-self: flex-start;
-  margin-top: 0.6em;
   padding: 1em 2.4em;
   border-radius: 100px;
   background: var(--color-blue);
@@ -90,15 +89,4 @@
 
 .submit:hover {
   background: var(--color-blue-dark);
-}
-
-.successMsg {
-  color: var(--color-blue);
-  font-size: 0.95em;
-}
-
-@media screen and (max-width: 640px) {
-  .row {
-    grid-template-columns: 1fr;
-  }
 }

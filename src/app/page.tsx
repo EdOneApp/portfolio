@@ -1,21 +1,18 @@
 import Hero from "@/components/Hero";
-import Manifesto from "@/components/Manifesto";
-import Terrains from "@/components/Terrains";
-import StackMarquee from "@/components/StackMarquee";
-import FeaturedWork from "@/components/FeaturedWork";
-import Testimonials from "@/components/Testimonials";
-import PartnersMarquee from "@/components/PartnersMarquee";
+import HomeIntro from "@/components/HomeIntro";
+import WorkList from "@/components/WorkList";
+import WorkTiles from "@/components/WorkTiles";
+import CenterGridBtn from "@/components/CenterGridBtn";
+import { featuredProjects, projects } from "@/data/content";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <Manifesto />
-      <Terrains />
-      <StackMarquee />
-      <FeaturedWork />
-      <Testimonials />
-      <PartnersMarquee />
+      <HomeIntro />
+      <WorkList title="Projets récents" projects={featuredProjects} />
+      <WorkTiles projects={featuredProjects} />
+      <CenterGridBtn href="/work" label="Plus de projets" count={projects.length} />
     </>
   );
 }

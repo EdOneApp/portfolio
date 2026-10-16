@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import PageHeader from "@/components/PageHeader";
+import Image from "next/image";
 import Reveal from "@/components/Reveal";
+import RevealLines from "@/components/RevealLines";
 import ContactForm from "@/components/ContactForm";
 import CalEmbed from "@/components/CalEmbed";
 import { profile } from "@/data/content";
@@ -15,51 +16,59 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <PageHeader
-        eyebrow="Contact"
-        title={["Discutons de", "votre projet."]}
-        intro="Décrivez votre besoin ci-dessous, ou réservez directement un créneau de 30 minutes dans mon agenda."
-      />
+      <header className={styles.header}>
+        <RevealLines
+          as="h1"
+          className={styles.title}
+          lines={[
+            <span key="l1">
+              <span className={styles.avatar}>
+                <Image src="/images/profile.jpg" alt="" fill sizes="2em" />
+              </span>{" "}
+              Discutons d&apos;un
+            </span>,
+            "projet ensemble",
+          ]}
+        />
+      </header>
 
       <div className={styles.grid}>
         <Reveal>
           <ContactForm />
         </Reveal>
 
-        <Reveal delay={0.1}>
-          <div className={styles.directRow}>
-            <p className={styles.directLink}>
-              <strong>Email</strong>
-              <a href={`mailto:${profile.email}`}>{profile.email}</a>
-            </p>
-            <p className={styles.directLink}>
-              <strong>WhatsApp</strong>
-              <a href={profile.whatsappHref} target="_blank" rel="noopener noreferrer">
-                {profile.phone}
-              </a>
-            </p>
-            <p className={styles.directLink}>
-              <strong>LinkedIn</strong>
-              <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">
-                @{profile.linkedinHandle}
-              </a>
-            </p>
-            <p className={styles.directLink}>
-              <strong>GitHub</strong>
-              <a href={profile.github} target="_blank" rel="noopener noreferrer">
-                @{profile.githubHandle}
-              </a>
-            </p>
-          </div>
-        </Reveal>
+        <div>
+          <Reveal delay={0.05} className={styles.sideBlock}>
+            <p className={styles.sideHeading}>Contact</p>
+            <a className={styles.sideLink} href={`mailto:${profile.email}`}>
+              {profile.email}
+            </a>
+            <a className={styles.sideLink} href={profile.whatsappHref} target="_blank" rel="noopener noreferrer">
+              {profile.phone}
+            </a>
+          </Reveal>
+
+          <Reveal delay={0.1} className={styles.sideBlock}>
+            <p className={styles.sideHeading}>Infos</p>
+            <p className={styles.sideLink}>{profile.location}</p>
+            <p className={styles.sideLink}>{profile.availability}</p>
+          </Reveal>
+
+          <Reveal delay={0.15} className={styles.sideBlock}>
+            <p className={styles.sideHeading}>Réseaux</p>
+            <a className={styles.sideLink} href={profile.linkedin} target="_blank" rel="noopener noreferrer">
+              LinkedIn
+            </a>
+            <a className={styles.sideLink} href={profile.github} target="_blank" rel="noopener noreferrer">
+              GitHub
+            </a>
+          </Reveal>
+        </div>
       </div>
 
       <section className={styles.calSection}>
         <Reveal>
-          <p className={styles.calHeading}>Ou directement</p>
-        </Reveal>
-        <Reveal delay={0.05}>
-          <h2 className={styles.calTitle}>Réservez un appel de 30 minutes dans mon agenda.</h2>
+          <h2 className={styles.calHeading}>Ou réservez directement un appel de 30 minutes.</h2>
         </Reveal>
         <Reveal delay={0.1} className={styles.calWrap}>
           <CalEmbed />

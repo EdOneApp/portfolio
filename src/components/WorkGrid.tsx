@@ -1,11 +1,12 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
+import Link from "next/link";
+import Image from "next/image";
+import { AnimatePresence, motion, useMotionValue, useSpring } from "motion/react";
 import type { Project } from "@/data/content";
-import ProjectCard from "./ProjectCard";
+import WorkTiles from "./WorkTiles";
 import styles from "./WorkGrid.module.css";
-import listStyles from "./ProjectCard.module.css";
 
 type Filter = {
   key: string;
@@ -39,8 +40,37 @@ const FILTERS: Filter[] = [
   { key: "sig", label: "SIG / Data", match: (p) => p.tags.some((t) => ["SIG", "Satellite", "Blockchain"].includes(t)) },
 ];
 
+function Row({ project }: { project: Project }) {
+  const x = useMotionValue(-999);
+  const y = useMotionValue(-999);
+  const springX = useSpring(x, { stiffness: 250, damping: 26 });
+  const springY = useSpring(y, { stiffness: 250, damping: 26 });
+
+  function handleMouseMove(e: React.MouseEvent) {
+    x.set(e.clientX + 24);
+    y.set(e.clientY - 85);
+  }
+
+  return (
+    <Link href={`/work/${project.slug}`} className={styles.row} onMouseMove={handleMouseMove}>
+      <div className={styles.rowInner}>
+        <h4 className={styles.title}>{project.title}</h4>
+        <span className={styles.meta}>{project.category}</span>
+        <span className={styles.meta}>{project.tags.slice(0, 2).join(" · ")}</span>
+        <span className={styles.link}>{project.link ? "Voir le site ↗" : "Dépôt / Interne"}</span>
+      </div>
+      {project.image && (
+        <motion.div className={styles.preview} style={{ x: springX, y: springY }}>
+          <Image src={project.image} alt={project.title} width={260} height={170} />
+        </motion.div>
+      )}
+    </Link>
+  );
+}
+
 export default function WorkGrid({ projects }: { projects: Project[] }) {
   const [active, setActive] = useState("all");
+  const [view, setView] = useState<"rows" | "columns">("rows");
 
   const counts = useMemo(
     () => Object.fromEntries(FILTERS.map((f) => [f.key, projects.filter(f.match).length])),
@@ -55,36 +85,66 @@ export default function WorkGrid({ projects }: { projects: Project[] }) {
   return (
     <section className={styles.section}>
       <div className={styles.inner}>
-        <div className={styles.filters}>
-          {FILTERS.map((f) => (
+        <div className={styles.filterRow}>
+          <div className={styles.filters}>
+            {FILTERS.map((f) => (
+              <button
+                key={f.key}
+                className={styles.filterBtn}
+                data-active={active === f.key}
+                onClick={() => setActive(f.key)}
+              >
+                {f.label}
+                <span className={styles.count}>{counts[f.key]}</span>
+              </button>
+            ))}
+          </div>
+          <div className={styles.viewToggle}>
             <button
-              key={f.key}
-              className={styles.filterBtn}
-              data-active={active === f.key}
-              onClick={() => setActive(f.key)}
+              className={styles.viewBtn}
+              data-active={view === "rows"}
+              onClick={() => setView("rows")}
+              aria-label="Vue liste"
             >
-              {f.label}
-              <span className={styles.count}>{counts[f.key]}</span>
+              ☰
             </button>
-          ))}
+            <button
+              className={styles.viewBtn}
+              data-active={view === "columns"}
+              onClick={() => setView("columns")}
+              aria-label="Vue grille"
+            >
+              ▦
+            </button>
+          </div>
         </div>
 
-        <div className={listStyles.list}>
-          <AnimatePresence mode="popLayout">
-            {filtered.map((project) => (
-              <motion.div
-                key={project.slug}
-                layout
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.3 }}
-              >
-                <ProjectCard project={project} />
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </div>
+        {view === "rows" ? (
+          <>
+            <div className={styles.headerRow}>
+              <span>Projet</span>
+              <span>Catégorie</span>
+              <span>Stack</span>
+              <span>Lien</span>
+            </div>
+            <AnimatePresence mode="popLayout">
+              {filtered.map((project) => (
+                <motion.div
+                  key={project.slug}
+                  layout
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Row project={project} />
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </>
+        ) : (
+          <WorkTiles projects={filtered} />
+        )}
       </div>
     </section>
   );

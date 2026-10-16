@@ -19,29 +19,60 @@
   font-size: 0.85em;
   letter-spacing: -0.02em;
   flex-shrink: 0;
+  transform: rotate(0.001deg);
+  transition: var(--animation-primary);
+}
+
+.logo:hover .mark {
+  transform: rotate(360deg);
 }
 
 .textWrap {
+  overflow: hidden;
+  position: relative;
+  height: 1.3em;
   display: flex;
-  flex-direction: column;
-  line-height: 1.1;
+  align-items: center;
 }
 
-.name {
-  font-size: 0.92em;
-  font-weight: 450;
+.name,
+.role {
+  position: relative;
+  display: inline-block;
   white-space: nowrap;
+  font-size: 0.92em;
+  transition: var(--animation-primary);
 }
 
 .role {
-  font-size: 0.68em;
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  transform: translateY(0.6em);
   font-weight: 300;
   color: var(--color-gray);
-  white-space: nowrap;
+  font-size: 0.78em;
 }
 
-@media screen and (max-width: 640px) {
-  .role {
-    display: none;
+.logo:hover .name {
+  opacity: 0;
+  transform: translateY(-0.6em);
+}
+
+.logo:hover .role {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media screen and (max-width: 540px) {
+  .logo:hover .mark {
+    transform: rotate(0.001deg);
+  }
+  .logo:hover .name {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .logo:hover .role {
+    opacity: 0;
   }
 }
