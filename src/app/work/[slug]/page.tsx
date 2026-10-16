@@ -97,7 +97,11 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           <div className={styles.devicesGrid} data-with-phone={hasPhone}>
             <DeviceFrame variant="laptop-compact" image={project.image} alt={`${project.title} — vue web`} />
             {hasPhone && (
-              <DeviceFrame variant="phone" image={project.image} alt={`${project.title} — application mobile`} />
+              <DeviceFrame
+                variant="phone"
+                image={project.mobileImage ?? project.image}
+                alt={`${project.title} — application mobile`}
+              />
             )}
           </div>
         </div>

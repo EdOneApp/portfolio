@@ -193,6 +193,7 @@ export type Project = {
   link?: string;
   linkLabel?: string;
   image?: string;
+  mobileImage?: string;
   award?: string;
   stats?: { value: string; label: string }[];
   featured?: boolean;
@@ -263,7 +264,8 @@ export const projects: Project[] = [
     award: "🏆 1er Prix Moov Africa CI StartUp Challenge 2025",
     link: "https://github.com/daniel10027",
     linkLabel: "Profil GitHub",
-    image: "/images/proj_school.png",
+    image: "/images/edoneweb.png",
+    mobileImage: "/images/edonemobile.png",
     featured: true,
   },
   {
