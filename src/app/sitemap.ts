@@ -3,7 +3,7 @@ import { projects } from "@/data/content";
 
 export const dynamic = "force-static";
 
-const siteUrl = "https://me.myoctogone.com";
+const siteUrl = "https://guedegbe.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [

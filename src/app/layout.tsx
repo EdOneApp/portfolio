@@ -20,7 +20,7 @@ const neueMontreal = localFont({
   display: "swap",
 });
 
-const siteUrl = "https://me.myoctogone.com";
+const siteUrl = "https://guedegbe.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
