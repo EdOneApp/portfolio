@@ -1,0 +1,26 @@
+.btn {
+  position: fixed;
+  bottom: 1.6em;
+  right: 1.6em;
+  z-index: 1500;
+  width: 3.4em;
+  height: 3.4em;
+  border-radius: 50%;
+  background: #25d366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.btn svg {
+  width: 1.7em;
+  height: 1.7em;
+  fill: #ffffff;
+}
+
+@media print {
+  .btn {
+    display: none;
+  }
+}

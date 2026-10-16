@@ -7,8 +7,10 @@ import AboutAward from "@/components/AboutAward";
 import { profile } from "@/data/content";
 
 export const metadata: Metadata = {
-  title: `À propos — ${profile.fullName}`,
+  title: "À propos",
   description: profile.seoDescription,
+  alternates: { canonical: "/about/" },
+  openGraph: { title: `À propos — ${profile.fullName}`, description: profile.seoDescription, url: "/about/" },
 };
 
 export default function AboutPage() {

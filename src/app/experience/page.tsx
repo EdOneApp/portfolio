@@ -3,10 +3,14 @@ import PageHeader from "@/components/PageHeader";
 import Timeline from "@/components/Timeline";
 import { journey, profile } from "@/data/content";
 
+const description =
+  "Parcours professionnel de Daniel Guedegbe : 6+ ans d'ingénierie logicielle entre Abidjan, Paris et le remote, du développement mobile au Tech Lead.";
+
 export const metadata: Metadata = {
-  title: `Expérience professionnelle — ${profile.fullName}`,
-  description:
-    "Parcours professionnel de Daniel Guedegbe : 6+ ans d'ingénierie logicielle entre Abidjan, Paris et le remote, du développement mobile au Tech Lead.",
+  title: "Expérience professionnelle",
+  description,
+  alternates: { canonical: "/experience/" },
+  openGraph: { title: `Expérience professionnelle — ${profile.fullName}`, description, url: "/experience/" },
 };
 
 export default function ExperiencePage() {

@@ -3,10 +3,14 @@ import PageHeader from "@/components/PageHeader";
 import CardGrid from "@/components/CardGrid";
 import { certifications, awards, profile } from "@/data/content";
 
+const description =
+  "Certifications IBM, Microsoft, AXELOS et distinctions de Daniel Guedegbe : 1er Prix Moov Africa CI StartUp Challenge 2025, finaliste ICESCO, Hackathon MTN MTS.";
+
 export const metadata: Metadata = {
-  title: `Certifications & distinctions — ${profile.fullName}`,
-  description:
-    "Certifications IBM, Microsoft, AXELOS et distinctions de Daniel Guedegbe : 1er Prix Moov Africa CI StartUp Challenge 2025, finaliste ICESCO, Hackathon MTN MTS.",
+  title: "Certifications & distinctions",
+  description,
+  alternates: { canonical: "/certifications/" },
+  openGraph: { title: `Certifications & distinctions — ${profile.fullName}`, description, url: "/certifications/" },
 };
 
 export default function CertificationsPage() {

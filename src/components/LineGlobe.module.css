@@ -1,5 +1,20 @@
 .section {
-  padding: 3em var(--container-padding);
+  padding: 3em var(--container-padding) 5em;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
   display: flex;
   justify-content: center;
+}
+
+.stripe {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--color-border-light);
 }

@@ -21,8 +21,16 @@ export async function generateMetadata({
   const project = projects.find((p) => p.slug === slug);
   if (!project) return {};
   return {
-    title: `${project.title} — ${profile.fullName}`,
+    title: project.title,
     description: project.description,
+    keywords: [project.title, project.category, ...project.tags],
+    alternates: { canonical: `/work/${project.slug}/` },
+    openGraph: {
+      title: `${project.title} — ${profile.fullName}`,
+      description: project.description,
+      url: `/work/${project.slug}/`,
+      images: project.image ? [{ url: project.image }] : undefined,
+    },
   };
 }
 
