@@ -286,7 +286,8 @@ export const projects: Project[] = [
       "Commande et livraison de plats ivoiriens authentiques. Catalogue dynamique par catégories, filtres par budget et profil, tunnel de commande fluide du choix du plat à la livraison.",
     tags: ["E-commerce", "Catalogue", "Panier & commande"],
     link: "https://spaguettidabidjan.com/",
-    image: "/images/proj_spaghetti.jpg",
+    image: "/images/spaguetti_web.png",
+    mobileImage: "/images/spaguetti_mobile.webp",
   },
   {
     slug: "sportif-africa",
