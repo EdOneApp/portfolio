@@ -201,6 +201,18 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "spaghetti-abidjan",
+    title: "Spaghetti d'Abidjan",
+    category: "E-commerce alimentaire",
+    description:
+      "Commande et livraison de plats ivoiriens authentiques. Catalogue dynamique par catégories, filtres par budget et profil, tunnel de commande fluide du choix du plat à la livraison.",
+    tags: ["E-commerce", "Catalogue", "Panier & commande"],
+    link: "https://spaguettidabidjan.com/",
+    image: "/images/spaguetti_web.png",
+    mobileImage: "/images/spaguetti_mobile.webp",
+    featured: true,
+  },
+  {
     slug: "bantoo",
     title: "BanToo",
     category: "Pressing à domicile",
@@ -220,7 +232,6 @@ export const projects: Project[] = [
     tags: ["Django", "Celery", "PostgreSQL", "REST API"],
     link: "https://fne.myoctogone.com/",
     image: "/images/proj_fne.png",
-    featured: true,
   },
   {
     slug: "brvm-analytics",
@@ -277,17 +288,6 @@ export const projects: Project[] = [
     tags: ["Flask", "Angular", "Flutter"],
     link: "https://allocar.app",
     image: "/images/proj_allocar.jpg",
-  },
-  {
-    slug: "spaghetti-abidjan",
-    title: "Spaghetti d'Abidjan",
-    category: "E-commerce alimentaire",
-    description:
-      "Commande et livraison de plats ivoiriens authentiques. Catalogue dynamique par catégories, filtres par budget et profil, tunnel de commande fluide du choix du plat à la livraison.",
-    tags: ["E-commerce", "Catalogue", "Panier & commande"],
-    link: "https://spaguettidabidjan.com/",
-    image: "/images/spaguetti_web.png",
-    mobileImage: "/images/spaguetti_mobile.webp",
   },
   {
     slug: "sportif-africa",

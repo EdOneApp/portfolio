@@ -41,7 +41,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
   const project = projects[index];
   const next = projects[(index + 1) % projects.length];
-  const hasPhone = project.tags.includes("Flutter");
+  const hasPhone = project.tags.includes("Flutter") || Boolean(project.mobileImage);
 
   return (
     <>
