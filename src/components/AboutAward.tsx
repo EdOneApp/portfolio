@@ -10,7 +10,7 @@ export default function AboutAward() {
     <section className={styles.section}>
       <div className={styles.inner}>
         <Reveal y={0} className={styles.imageWrap}>
-          <Image src="/images/edoneweb.png" alt={top.title} fill sizes="(max-width: 900px) 100vw, 45vw" />
+          <Image src="/images/edone-web-news.png" alt={top.title} fill sizes="(max-width: 900px) 100vw, 45vw" />
         </Reveal>
         <div>
           <Reveal>

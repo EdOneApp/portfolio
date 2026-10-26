@@ -275,8 +275,8 @@ export const projects: Project[] = [
     award: "🏆 1er Prix Moov Africa CI StartUp Challenge 2025",
     link: "https://github.com/daniel10027",
     linkLabel: "Profil GitHub",
-    image: "/images/edoneweb.png",
-    mobileImage: "/images/edonemobile.png",
+    image: "/images/edone-web-news.png",
+    mobileImage: "/images/edone-mobile-news.png",
     featured: true,
   },
   {

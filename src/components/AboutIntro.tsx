@@ -28,7 +28,7 @@ export default function AboutIntro() {
         </Reveal>
         <div className={styles.imageWrap} ref={ref}>
           <motion.div style={{ y, height: "116%", position: "relative" }}>
-            <Image src="/images/moi.png" alt="Daniel Guedegbe" fill sizes="(max-width: 900px) 100vw, 45vw" style={{ objectFit: "cover" }} />
+            <Image src="/images/moi-face.jpeg" alt="Daniel Guedegbe" fill sizes="(max-width: 900px) 100vw, 45vw" style={{ objectFit: "cover" }} />
           </motion.div>
         </div>
       </div>
