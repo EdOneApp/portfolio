@@ -69,6 +69,8 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         </Reveal>
       </div>
 
+      {project.slug === "myoctogone" && <Reveal className={styles.projectDescription}><p>{project.description}</p></Reveal>}
+
       {project.stats && (
         <div className={styles.statsRow}>
           {project.stats.map((s) => (
@@ -108,7 +110,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               <DeviceFrame
                 variant="phone"
                 image={project.mobileImage ?? project.image}
-                alt={`${project.title} — application mobile`}
+                alt={project.slug === "myoctogone" ? "MyOctogone, vue mobile du site" : `${project.title} — application mobile`}
               />
             )}
           </div>

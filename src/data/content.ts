@@ -380,6 +380,24 @@ export const projects: Project[] = [
     tags: ["Blockchain", "Satellite"],
     award: "🏅 Finaliste, MASS Solutions Spatiales Africaines 2025",
   },
+  {
+    slug: "myoctogone",
+    title: "MyOctogone",
+    category: "Site corporate multisectoriel",
+    description:
+      "Refonte du site du groupe Octogone à Abidjan : présentation de huit filiales, galerie filtrable de 17 projets, interfaces en français et en anglais, animations et écrans en perspective. Site responsive construit avec Astro, React, TypeScript et Tailwind CSS, avec formulaire WhatsApp, prise de rendez-vous Cal.com, données structurées et sitemaps bilingues. Déploiement automatisé sur GitHub Pages et domaine personnalisé en HTTPS.",
+    tags: ["Astro", "React", "TypeScript", "Tailwind CSS", "SEO"],
+    link: "https://myoctogone.com/",
+    linkLabel: "Voir MyOctogone",
+    image: "/images/myoctogone-web.webp",
+    mobileImage: "/images/myoctogone-mobile.webp",
+    stats: [
+      { value: "8", label: "Filiales présentées" },
+      { value: "17", label: "Projets dans la galerie" },
+      { value: "2", label: "Langues : français et anglais" },
+    ],
+    featured: false,
+  },
 ];
 
 export const featuredProjects = projects.filter((p) => p.featured);

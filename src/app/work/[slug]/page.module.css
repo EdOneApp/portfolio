@@ -164,3 +164,12 @@
     grid-template-columns: 1fr;
   }
 }
+
+.projectDescription {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--container-padding) 2.5em;
+  color: var(--color-lightgray);
+  line-height: 1.8;
+}
+.projectDescription p { max-width: 780px; }
