@@ -3,6 +3,7 @@ import PageHeader from "@/components/PageHeader";
 import LineGlobe from "@/components/LineGlobe";
 import AboutIntro from "@/components/AboutIntro";
 import AboutServices from "@/components/AboutServices";
+import AboutJourney from "@/components/AboutJourney";
 import AboutAward from "@/components/AboutAward";
 import { profile } from "@/data/content";
 
@@ -20,6 +21,7 @@ export default function AboutPage() {
       <LineGlobe />
       <AboutIntro />
       <AboutServices />
+      <AboutJourney />
       <AboutAward />
     </>
   );

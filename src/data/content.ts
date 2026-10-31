@@ -116,32 +116,32 @@ export const journey: JourneyItem[] = [
       "APIs Django/DRF et applications Flutter pour le suivi de chantier : géolocalisation, pointage et rapports automatisés.",
   },
   {
-    period: "2022 — 2023",
+    period: "Mars 2022 — Avril 2023",
     role: "Développeur Backend Python/Django",
     place: "Saas Group · Remote",
     description:
-      "Plateforme RH Sentinelle : présence par RFID, QR codes et reconnaissance faciale, données live via Django Channels.",
+      "Conception et développement de Sentinelle, plateforme RH de présence par RFID, QR codes et reconnaissance faciale, avec données live via Django Channels. Architecture de base de données pensée pour des clients entreprise à l'échelle.",
   },
   {
-    period: "2020 — 2025",
+    period: "Juin 2020 — Mai 2025",
     role: "Lead Développeur Full Stack & Responsable IT",
     place: "IIPEA · Abidjan",
     description:
-      "Pilotage du cycle complet de développement et encadrement d'une équipe pour plusieurs applications institutionnelles.",
+      "Direction du développement de MyIIPEA, ERP éducatif multiplateforme (web et mobile) couvrant 12+ modules : scolarité, inscriptions, emplois du temps, comptabilité, RH, infirmerie. Pilotage du cycle complet, de la spécification à la mise en production, encadrement d'une équipe technique.",
   },
   {
-    period: "Mai 2025 →",
-    role: "Développeur Backend — Mobilité Intelligente",
-    place: "Illigo · Abidjan",
+    period: "Juin 2025 — Octobre 2025",
+    role: "Développeur Backend Python/Django — Mobilité Intelligente",
+    place: "Illigo · Abidjan (Hybride)",
     description:
-      "Backend Django/DRF en Clean Architecture, intégré à une infrastructure IoT via MQTT, REST et WebSocket.",
+      "Backend modulaire en Clean Architecture (Django/DRF), intégré à une flotte IoT (stations, véhicules, chargeurs) via MQTT, REST et WebSocket. Implémentation du contrôle à distance des véhicules : verrouillage, suivi GPS, statut en temps réel.",
   },
   {
     period: "Sept. 2025 →",
-    role: "Backend Developer",
+    role: "Senior Python Developer",
     place: "Orange Liberia · Remote",
     description:
-      "Microservices Python/Flask critiques, APIs REST inter-opérateurs, optimisation SQL Server et automatisation Ansible.",
+      "Architecture de microservices Python/Flask critiques pour un opérateur télécom majeur, APIs REST haute performance pour des intégrations financières inter-opérateurs. Optimisation de bases SQL Server et NoSQL, personnalisation de modules Odoo pour la facturation et le CRM, automatisation Ansible.",
   },
   {
     period: "Nov. 2025 → (poste actuel)",
@@ -149,9 +149,16 @@ export const journey: JourneyItem[] = [
     place: "Espoir Collectif · Paris (Hybride)",
     current: true,
     description:
-      "Direction technique de programmes sociaux à fort impact, entre la France et l'Afrique. Standards, mentorat, stratégie.",
+      "Direction technique de programmes sociaux à fort impact, entre la France et l'Afrique. Définition des standards techniques, mentorat de l'équipe, stratégie produit et architecture.",
   },
 ];
+
+export const aboutMission = {
+  tagline: "Clean Architecture + Clean Code = Impact durable.",
+  summary:
+    "Je construis des plateformes robustes et performantes pour l'Afrique : backend Python/Django, applications Flutter et interfaces Next.js, avec une exigence constante de qualité et de documentation.",
+  specialties: ["Énergie / IoT", "Éducation", "Agritech", "Fintech", "Données"],
+};
 
 export const skillCategories = [
   {
@@ -396,7 +403,25 @@ export const projects: Project[] = [
       { value: "17", label: "Projets dans la galerie" },
       { value: "2", label: "Langues : français et anglais" },
     ],
-    featured: false,
+    featured: true,
+  },
+  {
+    slug: "salmacreation",
+    title: "Salma Création",
+    category: "E-commerce maroquinerie",
+    description:
+      "Boutique en ligne de maroquinerie en cuir véritable à Abidjan : sacs d'affaires, sacs à dos et bandoulières à l'allure intemporelle. Catalogue produit avec fiches détaillées, paiement Mobile Money en ligne, mise en avant de la boutique physique (Boulevard Latrille) et livraison à Abidjan et au-delà. Interface Next.js, React, TypeScript et Tailwind CSS, animations soignées du bureau au mobile.",
+    tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "E-commerce", "Mobile Money"],
+    link: "https://salmacreation.online/",
+    linkLabel: "Voir Salma Création",
+    image: "/images/salmacreation-web.webp",
+    mobileImage: "/images/salmacreation-mobile.webp",
+    stats: [
+      { value: "3", label: "Familles de produits" },
+      { value: "1", label: "Boutique physique à Abidjan" },
+      { value: "100%", label: "Cuir véritable" },
+    ],
+    featured: true,
   },
 ];
 
