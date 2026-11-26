@@ -4,7 +4,7 @@ import WorkGrid from "@/components/WorkGrid";
 import { projects, profile } from "@/data/content";
 
 const description =
-  "17 projets livrés en production par Daniel Guedegbe : fintech, ERP, mobilité électrique, e-commerce, SIG et outillage open-source.";
+  `${projects.length} projets présentés par Daniel Guedegbe : fintech, ERP, mobilité électrique, e-commerce, expériences web immersives, SIG et outillage open-source.`;
 
 export const metadata: Metadata = {
   title: "Projets",

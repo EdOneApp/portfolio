@@ -69,7 +69,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         </Reveal>
       </div>
 
-      {(project.slug === "myoctogone" || project.slug === "salmacreation") && (
+      {(["myoctogone", "salmacreation", "babijus"].includes(project.slug)) && (
         <Reveal className={styles.projectDescription}><p>{project.description}</p></Reveal>
       )}
 
@@ -113,7 +113,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                 variant="phone"
                 image={project.mobileImage ?? project.image}
                 alt={
-                  project.slug === "myoctogone" || project.slug === "salmacreation"
+                  ["myoctogone", "salmacreation", "babijus"].includes(project.slug)
                     ? `${project.title}, vue mobile du site`
                     : `${project.title} — application mobile`
                 }

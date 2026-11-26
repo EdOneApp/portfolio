@@ -208,6 +208,24 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "babijus",
+    title: "BABI JUS",
+    category: "Site vitrine immersif & boissons ivoiriennes",
+    description:
+      "Création d’un univers de marque pour des jus ivoiriens : identité visuelle, packagings et site immersif de 33 pages. Catalogue de 24 saveurs avec recherche et filtres, bouteilles animées au défilement, ingrédients en spirale et vues 3D à 360°. Carte interactive de Côte d’Ivoire avec géolocalisation facultative et points de vente de démonstration clairement signalés. Interface responsive, contact WhatsApp et email, accessibilité et déploiement automatisé sur GitHub Pages avec domaine personnalisé en HTTPS.",
+    tags: ["Next.js", "React", "TypeScript", "GSAP", "Three.js", "Leaflet"],
+    link: "https://babijus.myoctogone.com/",
+    linkLabel: "Découvrir BABI JUS",
+    image: "/images/babijus-web.webp",
+    mobileImage: "/images/babijus-mobile.webp",
+    stats: [
+      { value: "24", label: "Saveurs présentées" },
+      { value: "33", label: "Pages statiques" },
+      { value: "360°", label: "Vues produits en 3D" },
+    ],
+    featured: true,
+  },
+  {
     slug: "spaghetti-abidjan",
     title: "Spaghetti d'Abidjan",
     category: "E-commerce alimentaire",
