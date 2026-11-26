@@ -17,6 +17,7 @@ const available = [
   "allocar",
   "os-iris",
   "sentinelle-rh",
+  "momofund",
   "brvm-analytics",
 ];
 export default function LivePreview({ project: p }: { project: Project }) {

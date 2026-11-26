@@ -426,12 +426,15 @@ export const projects: Project[] = [
   {
     slug: "momofund",
     title: "MomoFund",
-    category: "Fintech / Mobile",
+    category: "Fintech / Financement participatif",
     description:
-      "Plateforme de crowdfunding via l'API MTN Mobile Money — 2ᵉ place au Hackathon MTN MTS 2024.",
-    tags: ["Flutter", "MTN MoMo API"],
+      "Un projet Flutter de financement participatif autour de l’API MTN Mobile Money, distingué au Hackathon MTN MTS 2024. La vitrine Next.js présente trois campagnes fictives, des interfaces web et mobile, un dashboard porteur et un simulateur de contribution sans paiement réel.",
+    tags: ["Flutter", "MTN MoMo API", "Next.js", "Interfaces fintech"],
     award: "🥈 2ᵉ place, Hackathon MTN MTS 2024",
-    image: "/images/proj_momofund.jpg",
+    link: "https://momofund.myoctogone.com/",
+    linkLabel: "Découvrir MomoFund",
+    image: "/images/momofund-web.webp",
+    mobileImage: "/images/momofund-mobile.webp",
   },
   {
     slug: "timestrackers",
