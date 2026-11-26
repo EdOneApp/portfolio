@@ -48,3 +48,5 @@ La refonte créative est développée et déployée depuis la branche `agency`. 
 - Workflow GitHub Pages : déclenchement sur `agency`, export statique `out/`, domaine conservé `guedegbe.com`. Ne pas fusionner dans `main` pour publier cette version.
 
 Vérification : `npm run build`, `npx tsc --noEmit --incremental false` et ESLint sur les fichiers modifiés.
+
+Le lecteur sonore est inclus dans l’export uniquement lorsque le fichier MP3 est présent au moment du build. Le MP3 reste hors du dépôt tant que les droits de diffusion publique ne sont pas confirmés. La refonte peut donc être publiée sans fichier audio ni lecteur vide.

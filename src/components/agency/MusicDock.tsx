@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-const SRC = "/Damso%20-%20Sentimental%20(Paroles).mp3";
-export default function MusicDock() {
+export default function MusicDock({src}: {src: string}) {
   const wantsSound = useRef(true);
   const audio = useRef<HTMLAudioElement>(null),
     [playing, setPlaying] = useState(false),
@@ -66,7 +65,7 @@ export default function MusicDock() {
     <div className={`agency-music ${playing ? "is-playing" : ""}`}>
       <audio
         ref={audio}
-        src={SRC}
+        src={src}
         loop
         preload="metadata"
         onPlay={() => setPlaying(true)}

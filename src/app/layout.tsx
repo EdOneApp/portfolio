@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import {existsSync} from "node:fs";
+import {join} from "node:path";
 import localFont from "next/font/local";
 import Nav from "@/components/agency/Nav";
 import Footer from "@/components/agency/Footer";
@@ -53,6 +55,7 @@ const agencyDisplay = localFont({
 });
 
 const siteUrl = "https://guedegbe.com";
+const backgroundAudio = existsSync(join(process.cwd(), "public", "Damso - Sentimental (Paroles).mp3")) ? "/Damso%20-%20Sentimental%20(Paroles).mp3" : null;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -166,7 +169,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
-          <MusicDock />
+          {backgroundAudio && <MusicDock src={backgroundAudio} />}
           <MotionSystem />
         </AgencyProvider>
       </body>
