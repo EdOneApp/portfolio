@@ -16,6 +16,7 @@ const available = [
   "pandatree",
   "allocar",
   "os-iris",
+  "sentinelle-rh",
   "brvm-analytics",
 ];
 export default function LivePreview({ project: p }: { project: Project }) {

@@ -414,11 +414,14 @@ export const projects: Project[] = [
   {
     slug: "sentinelle-rh",
     title: "Sentinelle RH",
-    category: "RH / Biométrie",
+    category: "RH / Gestion des présences",
     description:
-      "Gestion des présences par RFID, QR codes et reconnaissance faciale, données live via Django Channels.",
-    tags: ["Django", "OpenCV", "Redis"],
-    image: "/images/proj_sentinelle.jpg",
+      "Un projet de gestion des présences autour de Django, OpenCV, Redis et Django Channels. La vitrine Next.js présente huit modules, une borne simulée, un tableau de bord multi-sites et un espace employé mobile avec des données fictives et des calculs pédagogiques.",
+    tags: ["Django", "OpenCV", "Redis", "Next.js", "Interfaces RH"],
+    link: "https://sentinelle.myoctogone.com/",
+    linkLabel: "Découvrir Sentinelle RH",
+    image: "/images/sentinelle-web.webp",
+    mobileImage: "/images/sentinelle-mobile.webp",
   },
   {
     slug: "momofund",
