@@ -14,6 +14,7 @@ const available = [
   "timestrackers",
   "ma-resie",
   "pandatree",
+  "allocar",
   "brvm-analytics",
 ];
 export default function LivePreview({ project: p }: { project: Project }) {

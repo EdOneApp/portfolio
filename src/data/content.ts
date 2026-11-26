@@ -356,10 +356,12 @@ export const projects: Project[] = [
     title: "AlloCar",
     category: "Mobilité & covoiturage",
     description:
-      "Plateforme pensée pour les contraintes locales : connectivité variable, paiements mobiles, itinéraires informels. Backend Flask, application Flutter et interface Angular, géolocalisation temps réel.",
-    tags: ["Flask", "Angular", "Flutter"],
-    link: "https://allocar.app",
-    image: "/images/proj_allocar.jpg",
+      "Une expérience de mobilité pensée pour Abidjan : interfaces passager et conducteur, tableau de bord web, carte interactive et trois tracés routiers réels. La vitrine Next.js met en scène le projet Flutter, Angular et Flask avec un GIF original et une démonstration de trajets aux données fictives.",
+    tags: ["Next.js", "Flutter", "Angular", "Flask", "Leaflet"],
+    link: "https://allocar.myoctogone.com/",
+    linkLabel: "Explorer AlloCar",
+    image: "/images/allocar-web.webp",
+    mobileImage: "/images/allocar-mobile.webp",
   },
   {
     slug: "sportif-africa",
