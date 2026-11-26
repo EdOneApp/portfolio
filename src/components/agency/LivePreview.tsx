@@ -11,6 +11,8 @@ const available = [
   "myoctogone",
   "edone",
   "fne-ivoire",
+  "timestrackers",
+  "ma-resie",
   "brvm-analytics",
 ];
 export default function LivePreview({ project: p }: { project: Project }) {
