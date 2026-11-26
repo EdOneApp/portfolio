@@ -401,12 +401,15 @@ export const projects: Project[] = [
   },
   {
     slug: "os-iris",
-    title: "OS-IRIS",
-    category: "ERP / Gestion",
+    title: "Osiris",
+    category: "ERP / Gestion des PME",
     description:
-      "ERP complet pour la gestion des stocks, des ventes et de la comptabilité commerciale de PME ivoiriennes.",
-    tags: ["Django", "PostgreSQL"],
-    image: "/images/proj_osiris.jpg",
+      "Un projet ERP pour les PME ivoiriennes : stocks, ventes et comptabilité commerciale autour de Django et PostgreSQL. Sa vitrine Next.js présente huit modules, des interfaces web et mobile, un tableau de bord interactif et une caisse de démonstration avec des données fictives.",
+    tags: ["Django", "PostgreSQL", "Next.js", "ERP", "Interfaces métier"],
+    link: "https://osiris.myoctogone.com/",
+    linkLabel: "Découvrir Osiris",
+    image: "/images/osiris-web.webp",
+    mobileImage: "/images/osiris-mobile.webp",
   },
   {
     slug: "sentinelle-rh",
