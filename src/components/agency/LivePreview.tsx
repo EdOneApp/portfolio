@@ -10,6 +10,7 @@ const available = [
   "ivolt",
   "myoctogone",
   "edone",
+  "fne-ivoire",
   "brvm-analytics",
 ];
 export default function LivePreview({ project: p }: { project: Project }) {

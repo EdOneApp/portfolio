@@ -286,10 +286,17 @@ export const projects: Project[] = [
     title: "FNE Ivoire",
     category: "Facturation électronique",
     description:
-      "Plateforme SaaS répondant à l'obligation de Facturation Normalisée Électronique de la DGI ivoirienne : génération, signature et transmission de factures en temps réel. Django et Celery pour le traitement asynchrone, API REST documentée pour l'intégration ERP.",
-    tags: ["Django", "Celery", "PostgreSQL", "REST API"],
+      "Site de présentation Next.js de FNE Ivoire, une plateforme de gestion de la facturation électronique pour les entreprises ivoiriennes. Identité vert profond et citron, 25 pages de contenu, huit modules présentés, parcours PME, cabinets et groupes, guides sourcés et démonstration interactive de facture avec calculs et impression d’un exemple sans valeur fiscale. Interface responsive, contact WhatsApp et déploiement GitHub Pages sur domaine personnalisé.",
+    tags: ["Next.js", "React", "TypeScript", "Design UI"],
     link: "https://fne.myoctogone.com/",
-    image: "/images/proj_fne.png",
+    linkLabel: "Découvrir FNE Ivoire",
+    image: "/images/fne-web.webp",
+    mobileImage: "/images/fne-mobile.webp",
+    stats: [
+      { value: "25", label: "Pages de présentation" },
+      { value: "8", label: "Modules détaillés" },
+      { value: "Web & mobile", label: "Expérience responsive" },
+    ],
   },
   {
     slug: "brvm-analytics",
