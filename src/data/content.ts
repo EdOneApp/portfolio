@@ -167,7 +167,16 @@ export const skillCategories = [
   },
   {
     title: "Frameworks & librairies",
-    items: ["Django", "DRF", "FastAPI", "Flask", "Next.js", "Angular", "Flutter", "React"],
+    items: [
+      "Django",
+      "DRF",
+      "FastAPI",
+      "Flask",
+      "Next.js",
+      "Angular",
+      "Flutter",
+      "React",
+    ],
   },
   {
     title: "Données & stockage",
@@ -175,7 +184,15 @@ export const skillCategories = [
   },
   {
     title: "Infrastructure & DevOps",
-    items: ["Docker", "Nginx", "Gunicorn", "DigitalOcean", "GitHub Actions", "GitLab CI/CD", "Ansible"],
+    items: [
+      "Docker",
+      "Nginx",
+      "Gunicorn",
+      "DigitalOcean",
+      "GitHub Actions",
+      "GitLab CI/CD",
+      "Ansible",
+    ],
   },
   {
     title: "Temps réel & asynchrone",
@@ -183,11 +200,27 @@ export const skillCategories = [
   },
   {
     title: "Architecture & méthodes",
-    items: ["Clean Architecture", "DDD", "Microservices", "REST", "TDD", "SCRUM"],
+    items: [
+      "Clean Architecture",
+      "DDD",
+      "Microservices",
+      "REST",
+      "TDD",
+      "SCRUM",
+    ],
   },
   {
     title: "Outils & spécialités",
-    items: ["Postman", "VS Code", "PyCharm", "OpenCV", "Firebase", "Odoo", "RFID / Biométrie", "Git"],
+    items: [
+      "Postman",
+      "VS Code",
+      "PyCharm",
+      "OpenCV",
+      "Firebase",
+      "Odoo",
+      "RFID / Biométrie",
+      "Git",
+    ],
   },
 ];
 
@@ -260,13 +293,14 @@ export const projects: Project[] = [
   },
   {
     slug: "brvm-analytics",
-    title: "BRVM Analytics",
+    title: "XOFA · BRVM Analytics",
     category: "Données financières",
     description:
-      "Analyse des cours, volumes et indices des sociétés cotées à la Bourse Régionale des Valeurs Mobilières, sur huit pays de l'UEMOA. Backend Django, cache Redis pour des temps de réponse compatibles avec le temps réel.",
+      "Analyse des cours, volumes et indices des sociétés cotées à la Bourse Régionale des Valeurs Mobilières, sur huit pays de l'UEMOA. XOFA rassemble les données publiques du marché dans un tableau de bord accessible sur ordinateur et mobile.",
     tags: ["Django", "Redis", "REST API", "Fintech"],
-    link: "https://brvm.myoctogone.com/",
-    image: "/images/proj_brvm.png",
+    link: "https://xofa.myoctogone.com/",
+    image: "/images/xofa-web.webp",
+    mobileImage: "/images/xofa-mobile.webp",
   },
   {
     slug: "wave-business-api",
@@ -298,8 +332,8 @@ export const projects: Project[] = [
       "Gestion complète du cycle académique, administratif et financier d'un établissement : inscriptions, emplois du temps, notes, facturation, communication. Déployé en pilote dans quatre établissements.",
     tags: ["Django", "Flutter", "PostgreSQL"],
     award: "🏆 1er Prix Moov Africa CI StartUp Challenge 2025",
-    link: "https://github.com/daniel10027",
-    linkLabel: "Profil GitHub",
+    link: "https://edone.my/",
+    linkLabel: "Découvrir Edone",
     image: "/images/edone-web-news.png",
     mobileImage: "/images/edone-mobile-news.png",
     featured: true,
@@ -429,7 +463,14 @@ export const projects: Project[] = [
     category: "E-commerce maroquinerie",
     description:
       "Boutique en ligne de maroquinerie en cuir véritable à Abidjan : sacs d'affaires, sacs à dos et bandoulières à l'allure intemporelle. Catalogue produit avec fiches détaillées, paiement Mobile Money en ligne, mise en avant de la boutique physique (Boulevard Latrille) et livraison à Abidjan et au-delà. Interface Next.js, React, TypeScript et Tailwind CSS, animations soignées du bureau au mobile.",
-    tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "E-commerce", "Mobile Money"],
+    tags: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "E-commerce",
+      "Mobile Money",
+    ],
     link: "https://salmacreation.online/",
     linkLabel: "Voir Salma Création",
     image: "/images/salmacreation-web.webp",
@@ -498,10 +539,19 @@ export const certifications = [
   { title: "Python for Data Science", issuer: "IBM" },
   { title: "Big Data Analysis", issuer: "IBM" },
   { title: "Machine Learning & Data Visualization with Python", issuer: "IBM" },
-  { title: "Microsoft Technologies Association Programming", issuer: "Microsoft" },
+  {
+    title: "Microsoft Technologies Association Programming",
+    issuer: "Microsoft",
+  },
   { title: "ITIL® Foundation in IT Service Management", issuer: "AXELOS" },
-  { title: "Administrateur de Bases de Données", issuer: "NaN — Not A Number CI" },
-  { title: "Planification de projet informatisé & suivi opérationnel", issuer: "MDS Canada" },
+  {
+    title: "Administrateur de Bases de Données",
+    issuer: "NaN — Not A Number CI",
+  },
+  {
+    title: "Planification de projet informatisé & suivi opérationnel",
+    issuer: "MDS Canada",
+  },
 ];
 
 export const testimonials = [

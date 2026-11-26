@@ -9,6 +9,8 @@ const filters = [
   "Web & design",
   "Mobile",
   "Backend & outils",
+  "Data & bases",
+  "Systèmes métier",
   "Fintech",
   "Mobilité",
 ];
@@ -44,6 +46,12 @@ export default function ProjectArchive() {
             return p.tags.some((t) =>
               ["Django", "Flask", "Python", "PyPI"].includes(t),
             );
+          case "Data & bases":
+            return /donnees|financ|cartograph|sig|postgresql|redis|analytics/.test(
+              text,
+            );
+          case "Systèmes métier":
+            return /erp|gestion|rh|factur|logistique|tracabilite/.test(text);
           case "Fintech":
             return /fintech|financi|factur|paiement|money|wave/i.test(text);
           case "Mobilité":

@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { Arrow, Asterisk } from "./ui";
 const links = [
   ["Réalisations", "/work"],
+  ["Services", "/services"],
   ["L’approche", "/about"],
   ["Contact", "/contact"],
 ];

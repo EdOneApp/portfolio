@@ -51,6 +51,9 @@ export default function AgencyFooter() {
         <span>© 2026 Daniel Guedegbe</span>
         <span>Design sensible. Code solide.</span>
         <div>
+          <Link href="/services">Services</Link>
+          <Link href="/presence-digitale">Présence digitale</Link>
+          <Link href="/diagnostic">Test gratuit</Link>
           <Link href="/experience">Parcours</Link>
           <Link href="/certifications">Distinctions</Link>
           <a href="#top">Tout là-haut ↑</a>

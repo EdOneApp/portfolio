@@ -3,7 +3,15 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import type { Project } from "@/data/content";
 import { Arrow, Label } from "./ui";
-const available = ["babijus", "bantoo", "voltara", "ivolt", "myoctogone"];
+const available = [
+  "babijus",
+  "bantoo",
+  "voltara",
+  "ivolt",
+  "myoctogone",
+  "edone",
+  "brvm-analytics",
+];
 export default function LivePreview({ project: p }: { project: Project }) {
   const section = useRef<HTMLElement>(null),
     frame = useRef<HTMLDivElement>(null);

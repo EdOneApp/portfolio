@@ -55,6 +55,13 @@ export default function ContactBrief() {
             <option>Un produit web / SaaS</option>
             <option>Une application mobile</option>
             <option>Une API / architecture backend</option>
+            <option>Data / tableaux de bord</option>
+            <option>Administration de bases de données</option>
+            <option>Un système sur mesure</option>
+            <option>Présence Google / référencement local</option>
+            <option>Réseaux sociaux / création de contenu</option>
+            <option>Pack présence digitale complet</option>
+            <option>Diagnostic gratuit de ma visibilité</option>
             <option>Une refonte complète</option>
             <option>Autre chose de passionnant</option>
           </select>

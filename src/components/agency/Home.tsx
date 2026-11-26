@@ -26,7 +26,7 @@ export default function AgencyHome() {
     "salmacreation",
     "spaghetti-abidjan",
     "edone",
-    "bantoo",
+    "brvm-analytics",
   ]
     .map((slug) => projects.find((p) => p.slug === slug)!)
     .filter(Boolean);
@@ -76,9 +76,9 @@ export default function AgencyHome() {
               </span>
             </h1>
             <p className="agency-hero-desc">
-              Je suis Daniel Guedegbe. Je donne du caractère à vos idées avec
-              des expériences web mémorables et des produits qui tiennent la
-              route.
+              Je suis Daniel Guedegbe. Applications web et mobiles, data,
+              systèmes sur mesure et présence digitale : je transforme vos idées
+              en outils utiles, beaux et solides.
             </p>
             <div className="agency-hero-actions">
               <Pill href="/work">
@@ -250,21 +250,39 @@ export default function AgencyHome() {
           {[
             [
               "01",
-              "Des expériences\nqui se remarquent.",
-              "Sites vitrines, e-commerce et interfaces de marque. Une direction visuelle affirmée, du mouvement juste et une attention aux détails.",
-              "Web design / Frontend / Motion",
-            ],
-            [
-              "02",
-              "Des produits\nqui servent vraiment.",
-              "Applications métier, plateformes SaaS, APIs et applications mobiles. Des parcours utiles, pensés pour vos utilisateurs et votre activité.",
+              "Le web.\nLe mobile aussi.",
+              "Applications web, SaaS et applications mobiles : des expériences pensées pour vos clients et vos équipes.",
               "Next.js / Django / Flutter",
             ],
             [
+              "02",
+              "Vos données.\nDe vraies décisions.",
+              "Collecte, traitement, tableaux de bord et visualisation. Rendez vos données lisibles et exploitables.",
+              "Data / BI / Visualisation",
+            ],
+            [
               "03",
-              "Des fondations\nqui tiennent.",
-              "Architecture, intégrations de paiement, automatisation et déploiement. Le travail invisible qui permet au reste de fonctionner.",
-              "Backend / APIs / Infrastructure",
+              "Des bases saines.\nEt bien administrées.",
+              "Conception de bases de données, optimisation des requêtes, sauvegardes et suivi de performance.",
+              "PostgreSQL / Modélisation / Administration",
+            ],
+            [
+              "04",
+              "Votre métier.\nVotre système.",
+              "ERP, outils internes, APIs, intégrations et automatisations : des systèmes construits autour de votre activité.",
+              "Sur mesure / Intégrations / Backend",
+            ],
+            [
+              "05",
+              "Une marque.\nUne vraie expérience.",
+              "Sites vitrines, e-commerce et refontes. Une direction visuelle affirmée, du mouvement juste et des détails soignés.",
+              "Design / Frontend / Motion",
+            ],
+            [
+              "06",
+              "Être visible.\nDonner envie.",
+              "Google, site professionnel, référencement local, réseaux sociaux, vidéos et visuels IA : une présence digitale cohérente.",
+              "Google / Social / Contenu",
             ],
           ].map(([n, t, d, tag]) => (
             <article key={n} data-reveal>
@@ -284,6 +302,17 @@ export default function AgencyHome() {
               <small>{tag}</small>
             </article>
           ))}
+        </div>
+        <div className="presence-links">
+          <Link href="/services" className="agency-pill">
+            Tous les services <Arrow />
+          </Link>
+          <Link href="/presence-digitale" className="agency-text-link">
+            Découvrir les packs visibilité <Arrow />
+          </Link>
+          <Link href="/diagnostic" className="agency-text-link">
+            Tester ma présence gratuitement <Arrow />
+          </Link>
         </div>
       </section>
       <section className="agency-person agency-section">

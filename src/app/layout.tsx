@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import {existsSync} from "node:fs";
-import {join} from "node:path";
+import { existsSync } from "node:fs";
+import { join } from "node:path";
 import localFont from "next/font/local";
 import Nav from "@/components/agency/Nav";
 import Footer from "@/components/agency/Footer";
@@ -55,7 +55,11 @@ const agencyDisplay = localFont({
 });
 
 const siteUrl = "https://guedegbe.com";
-const backgroundAudio = existsSync(join(process.cwd(), "public", "audio", "damso-sentimental.mp3")) ? "/audio/damso-sentimental.mp3" : null;
+const backgroundAudio = existsSync(
+  join(process.cwd(), "public", "audio", "damso-sentimental.mp3"),
+)
+  ? "/audio/damso-sentimental.mp3"
+  : null;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -64,7 +68,7 @@ export const metadata: Metadata = {
     template: `%s — ${profile.fullName}`,
   },
   description:
-    "Portfolio de Daniel Guedegbe : sites immersifs, applications et architectures solides. Un esprit de studio et une exigence d’ingénieur, depuis Abidjan.",
+    "Portfolio de Daniel Guedegbe : applications web et mobiles, data, bases de données et présence digitale. Un esprit de studio et une exigence d’ingénieur, depuis Abidjan.",
   keywords: [
     profile.fullName,
     "Daniel Guedegbe",
@@ -87,7 +91,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Daniel Guedegbe — De l’idée à l’impact",
     description:
-      "Design sensible, code solide : sites immersifs, produits web et applications par Daniel Guedegbe, depuis Abidjan.",
+      "Design sensible, code solide : applications web et mobiles, data et systèmes sur mesure par Daniel Guedegbe, depuis Abidjan.",
     url: siteUrl,
     siteName: profile.fullName,
     type: "website",
@@ -105,7 +109,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Daniel Guedegbe — De l’idée à l’impact",
     description:
-      "Design sensible, code solide : sites immersifs, produits web et applications par Daniel Guedegbe, depuis Abidjan.",
+      "Design sensible, code solide : applications web et mobiles, data et systèmes sur mesure par Daniel Guedegbe, depuis Abidjan.",
     images: ["/images/agency/og-agency.webp"],
   },
   robots: {
