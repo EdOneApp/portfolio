@@ -307,10 +307,16 @@ export default function AgencyHome() {
           <Link href="/services" className="agency-pill">
             Tous les services <Arrow />
           </Link>
-          <Link href="/presence-digitale" className="agency-text-link">
+          <Link
+            href="/presence-digitale"
+            className="agency-pill agency-attention-cta agency-attention-packs"
+          >
             Découvrir les packs visibilité <Arrow />
           </Link>
-          <Link href="/diagnostic" className="agency-text-link">
+          <Link
+            href="/diagnostic"
+            className="agency-pill agency-attention-cta agency-attention-diagnostic"
+          >
             Tester ma présence gratuitement <Arrow />
           </Link>
         </div>

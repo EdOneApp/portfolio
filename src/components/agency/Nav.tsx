@@ -7,6 +7,7 @@ import { Arrow, Asterisk } from "./ui";
 const links = [
   ["Réalisations", "/work"],
   ["Services", "/services"],
+  ["Découvrir les packs visibilité", "/presence-digitale"],
   ["L’approche", "/about"],
   ["Contact", "/contact"],
 ];
@@ -77,6 +78,9 @@ export default function AgencyNav() {
             <Link
               href={href}
               key={href}
+              className={
+                href === "/presence-digitale" ? "agency-nav-packs" : undefined
+              }
               aria-current={path.startsWith(href) ? "page" : undefined}
             >
               {label}
@@ -120,7 +124,14 @@ export default function AgencyNav() {
           </button>
           <p className="agency-label">L’IDÉE, C’EST DE SE RENCONTRER.</p>
           {links.map(([label, href], i) => (
-            <Link key={href} href={href} onClick={() => setOpen(false)}>
+            <Link
+              key={href}
+              href={href}
+              className={
+                href === "/presence-digitale" ? "agency-menu-packs" : undefined
+              }
+              onClick={() => setOpen(false)}
+            >
               <small>0{i + 1}</small>
               {label}
               <Arrow />
