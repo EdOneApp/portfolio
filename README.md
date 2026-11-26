@@ -50,3 +50,5 @@ La refonte créative est développée et déployée depuis la branche `agency`. 
 Vérification : `npm run build`, `npx tsc --noEmit --incremental false` et ESLint sur les fichiers modifiés.
 
 Le lecteur sonore est inclus dans l’export uniquement lorsque le fichier MP3 est présent au moment du build. Le MP3 reste hors du dépôt tant que les droits de diffusion publique ne sont pas confirmés. La refonte peut donc être publiée sans fichier audio ni lecteur vide.
+
+La diffusion du morceau a été confirmée par le propriétaire. La copie publiée et lue par le site est `public/audio/damso-sentimental.mp3`, encodée en MP3 standard à 160 kbit/s. Le fichier fourni initialement utilisait le codec Opus malgré son extension ; il est conservé localement, sans être recopié dans les prochains exports GitHub Pages.

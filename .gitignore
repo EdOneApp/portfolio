@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Original audio retained locally; publish the normalized MP3 copy.
+/public/Damso - Sentimental (Paroles).mp3

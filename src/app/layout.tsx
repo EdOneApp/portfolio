@@ -55,7 +55,7 @@ const agencyDisplay = localFont({
 });
 
 const siteUrl = "https://guedegbe.com";
-const backgroundAudio = existsSync(join(process.cwd(), "public", "Damso - Sentimental (Paroles).mp3")) ? "/Damso%20-%20Sentimental%20(Paroles).mp3" : null;
+const backgroundAudio = existsSync(join(process.cwd(), "public", "audio", "damso-sentimental.mp3")) ? "/audio/damso-sentimental.mp3" : null;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
