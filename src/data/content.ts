@@ -461,13 +461,16 @@ export const projects: Project[] = [
     mobileImage: "/images/maresie-mobile.webp",
   },
   {
-    slug: "traceagrichain",
-    title: "TraceAgriChain",
-    category: "Agritech / Spatial",
+    slug: "cacaosat",
+    title: "CacaoSat",
+    category: "Agritech / Satellite & traçabilité",
     description:
-      "Traçabilité agricole combinant blockchain, imagerie satellite et cartographie 3D — Finaliste MASS / ICESCO 2025.",
-    tags: ["Blockchain", "Satellite"],
-    award: "🏅 Finaliste, MASS Solutions Spatiales Africaines 2025",
+      "Une expérience immersive de la traçabilité du cacao ivoirien : terrain 3D procédural, satellite en orbite, caméra au défilement et cartographie interactive. Vues agent, coopérative et exportateur, lots et rapport GeoJSON avec des données synthétiques clairement séparées de toute certification réelle.",
+    tags: ["Next.js", "Three.js", "Leaflet", "GeoJSON", "Satellite"],
+    link: "https://cacaosat.myoctogone.com/",
+    linkLabel: "Explorer CacaoSat",
+    image: "/images/cacaosat-web.webp",
+    mobileImage: "/images/cacaosat-mobile.webp",
   },
   {
     slug: "myoctogone",
@@ -527,7 +530,7 @@ export const awards = [
     date: "Mai 2025",
     title: "Finaliste, MASS Solutions Spatiales Africaines (ICESCO)",
     status: "Finaliste",
-    text: "Présentation de TraceAgriChain, combinant blockchain, imagerie satellite et cartographie 3D pour la traçabilité des matières premières agricoles.",
+    text: "Présentation de travaux de traçabilité agricole combinant blockchain, imagerie satellite et cartographie 3D au concours MASS / ICESCO 2025.",
   },
   {
     date: "Janv. 2024",

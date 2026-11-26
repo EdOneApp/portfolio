@@ -18,6 +18,7 @@ const available = [
   "os-iris",
   "sentinelle-rh",
   "momofund",
+  "cacaosat",
   "brvm-analytics",
 ];
 export default function LivePreview({ project: p }: { project: Project }) {
