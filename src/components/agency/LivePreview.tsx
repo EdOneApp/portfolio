@@ -13,6 +13,7 @@ const available = [
   "fne-ivoire",
   "timestrackers",
   "ma-resie",
+  "pandatree",
   "brvm-analytics",
 ];
 export default function LivePreview({ project: p }: { project: Project }) {

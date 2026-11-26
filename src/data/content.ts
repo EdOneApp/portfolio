@@ -325,11 +325,17 @@ export const projects: Project[] = [
     title: "PandaTree",
     category: "Cartographie & SIG",
     description:
-      "En collaboration avec le CNRA, recensement et cartographie du patrimoine arboricole ivoirien. Backend Django/DRF, application Flutter de collecte terrain, outils SIG pour la visualisation géospatiale.",
-    tags: ["Django", "Flutter", "SIG"],
-    link: "https://github.com/daniel10027/PandaTree/",
-    linkLabel: "Voir le dépôt",
-    image: "/images/proj_pandatree.jpg",
+      "Projet de gestion, cartographie et reconnaissance du patrimoine végétal ivoirien, avec backend Django/DRF et usages mobiles Flutter décrits dans sa documentation. Site immersif Next.js de 25 pages : paysages forestiers, atlas pédagogique de six espèces avec références botaniques, carte Leaflet et douze emplacements fictifs filtrables, parcours de collecte et démonstration locale de prévisualisation de feuille. Design responsive, animations respectant la réduction des mouvements et déploiement GitHub Pages en HTTPS.",
+    tags: ["Django", "Flutter", "Next.js", "Leaflet", "SIG"],
+    link: "https://pandatree.myoctogone.com/",
+    linkLabel: "Explorer PandaTree",
+    image: "/images/pandatree-web.webp",
+    mobileImage: "/images/pandatree-mobile.webp",
+    stats: [
+      { value: "25", label: "Pages de présentation" },
+      { value: "6", label: "Fiches pédagogiques" },
+      { value: "12", label: "Emplacements fictifs sur la carte" },
+    ],
   },
   {
     slug: "edone",
