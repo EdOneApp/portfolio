@@ -1,134 +1,158 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { projects, profile } from "@/data/content";
-import Reveal from "@/components/Reveal";
-import RevealLines from "@/components/RevealLines";
+import { Arrow, Label, Asterisk } from "@/components/agency/ui";
+import LivePreview from "@/components/agency/LivePreview";
 import DeviceFrame from "@/components/DeviceFrame";
-import styles from "./page.module.css";
-
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
 }
-
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const project = projects.find((p) => p.slug === slug);
-  if (!project) return {};
-  return {
-    title: project.title,
-    description: project.description,
-    keywords: [project.title, project.category, ...project.tags],
-    alternates: { canonical: `/work/${project.slug}/` },
-    openGraph: {
-      title: `${project.title} — ${profile.fullName}`,
-      description: project.description,
-      url: `/work/${project.slug}/`,
-      images: project.image ? [{ url: project.image }] : undefined,
-    },
-  };
+  const p = projects.find((p) => p.slug === slug);
+  return p
+    ? {
+        title: p.title,
+        description: p.description,
+        keywords: [p.title, p.category, ...p.tags],
+        alternates: { canonical: `/work/${p.slug}/` },
+        openGraph: {
+          title: `${p.title} — ${profile.fullName}`,
+          description: p.description,
+          images: p.image ? [{ url: p.image }] : undefined,
+        },
+      }
+    : { title: "Projet introuvable" };
 }
-
-export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function ProjectPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
   const index = projects.findIndex((p) => p.slug === slug);
-  if (index === -1) notFound();
-
-  const project = projects[index];
-  const next = projects[(index + 1) % projects.length];
-  const hasPhone = project.tags.includes("Flutter") || Boolean(project.mobileImage);
-
+  if (index < 0) notFound();
+  const p = projects[index],
+    next = projects[(index + 1) % projects.length];
   return (
     <>
-      <div className={styles.header}>
-        <RevealLines as="h1" className={styles.title} lines={[project.title]} />
-      </div>
-
-      <div className={styles.intro}>
-        <Reveal className={styles.introCol}>
-          <h5>Catégorie</h5>
-          <div className={styles.introStripe} />
-          <p>{project.category}</p>
-        </Reveal>
-        <Reveal delay={0.05} className={styles.introCol}>
-          <h5>Stack</h5>
-          <div className={styles.introStripe} />
-          {project.tags.map((t) => (
-            <p key={t}>{t}</p>
-          ))}
-        </Reveal>
-        <Reveal delay={0.1} className={styles.introCol}>
-          <h5>{project.award ? "Récompense" : "Statut"}</h5>
-          <div className={styles.introStripe} />
-          <p>{project.award ?? "En production"}</p>
-        </Reveal>
-      </div>
-
-      {(["myoctogone", "salmacreation", "babijus"].includes(project.slug)) && (
-        <Reveal className={styles.projectDescription}><p>{project.description}</p></Reveal>
-      )}
-
-      {project.stats && (
-        <div className={styles.statsRow}>
-          {project.stats.map((s) => (
-            <Reveal key={s.label} className={styles.stat}>
-              <h3>{s.value}</h3>
-              <p>{s.label}</p>
-            </Reveal>
-          ))}
+      <header className="agency-project-head">
+        <Link href="/work" className="agency-back">
+          ← Toutes les réalisations
+        </Link>
+        <div className="agency-project-title">
+          <h1>
+            {p.title}
+            <span>.</span>
+          </h1>
+          <span>
+            PROJET {String(index + 1).padStart(2, "0")} / {projects.length}
+          </span>
         </div>
-      )}
-
-      <div className={styles.imageSection}>
-        {project.link && (
-          <Reveal className={styles.btnWrap}>
-            <a className={styles.liveBtn} href={project.link} target="_blank" rel="noopener noreferrer">
-              {project.linkLabel ?? "Voir le site"} ↗
-            </a>
-          </Reveal>
-        )}
-
-        {project.image ? (
-          <Reveal y={40} className={styles.heroImage}>
-            <Image src={project.image} alt={project.title} fill sizes="100vw" priority />
-          </Reveal>
-        ) : (
-          <Reveal y={40} className={styles.heroImage}>
-            <div className={styles.heroFallback}>{project.title}</div>
-          </Reveal>
-        )}
-      </div>
-
-      {project.image && (
-        <div className={styles.devicesSection}>
-          <div className={styles.devicesGrid} data-with-phone={hasPhone}>
-            <DeviceFrame variant="laptop-compact" image={project.image} alt={`${project.title} — vue web`} />
-            {hasPhone && (
-              <DeviceFrame
-                variant="phone"
-                image={project.mobileImage ?? project.image}
-                alt={
-                  ["myoctogone", "salmacreation", "babijus"].includes(project.slug)
-                    ? `${project.title}, vue mobile du site`
-                    : `${project.title} — application mobile`
-                }
-              />
+        <div className="agency-project-intro">
+          <div>
+            <Label>LE TERRAIN DE JEU</Label>
+            <p>{p.category}</p>
+          </div>
+          <div>
+            <Label>LES OUTILS</Label>
+            <p>{p.tags.join(" · ")}</p>
+          </div>
+          <div>
+            <Label>{p.award ? "LA DISTINCTION" : "DÉCOUVRIR"}</Label>
+            {p.award ? (
+              <p>{p.award}</p>
+            ) : p.link ? (
+              <a href={p.link} target="_blank" rel="noopener noreferrer">
+                {p.linkLabel || "Explorer le projet"} <Arrow />
+              </a>
+            ) : (
+              <p>Présentation du projet</p>
             )}
           </div>
         </div>
+      </header>
+      <section className="agency-project-hero-image">
+        {p.image ? (
+          <Image
+            src={p.image}
+            alt={`${p.title}, vue d’ensemble du projet`}
+            width={1800}
+            height={1000}
+            priority
+            sizes="100vw"
+          />
+        ) : (
+          <div className="agency-project-fallback">
+            <span>{p.title}</span>
+            <Asterisk />
+          </div>
+        )}
+      </section>
+      <section className="agency-project-story agency-section">
+        <Label>LE PROJET EN QUELQUES MOTS</Label>
+        <div data-reveal>
+          <h2>
+            {p.title}.<br />
+            <em>Une idée, du concret.</em>
+          </h2>
+          <p>{p.description}</p>
+        </div>
+      </section>
+      {p.stats && (
+        <section className="agency-project-stats">
+          {p.stats.map((s) => (
+            <div key={s.label} data-reveal>
+              <span>{s.value}</span>
+              <p>{s.label}</p>
+            </div>
+          ))}
+        </section>
       )}
-
-      <div className={styles.nextSection}>
-        <p className={styles.nextLabel}>Projet suivant</p>
-        <Link href={`/work/${next.slug}`} className={styles.nextTitle}>
-          {next.title} →
+      <LivePreview key={p.slug} project={p} />
+      {p.image && (
+        <section className="agency-detail-devices agency-section">
+          <Label>DU GRAND ÉCRAN AU CREUX DE LA MAIN</Label>
+          <h2 data-reveal>
+            Les détails comptent.
+            <br />
+            <em>Sur chaque écran.</em>
+          </h2>
+          <div
+            className={`agency-device-grid ${p.mobileImage ? "with-phone" : ""}`}
+          >
+            <DeviceFrame
+              variant="laptop-compact"
+              image={p.image}
+              alt={`${p.title}, vue sur ordinateur`}
+            />
+            {p.mobileImage && (
+              <DeviceFrame
+                variant="phone"
+                image={p.mobileImage}
+                alt={`${p.title}, vue mobile`}
+              />
+            )}
+          </div>
+        </section>
+      )}
+      <section className="agency-next-project">
+        <Label>UNE AUTRE HISTOIRE À DÉCOUVRIR</Label>
+        <Link href={`/work/${next.slug}`}>
+          <span>{next.title}</span>
+          <Arrow />
         </Link>
-      </div>
+        <div>
+          <p>{next.category}</p>
+          <span>PROJET SUIVANT</span>
+        </div>
+      </section>
     </>
   );
 }

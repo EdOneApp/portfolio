@@ -1,22 +1,54 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import Nav from "@/components/Nav";
-import Footer from "@/components/Footer";
-import PageTransition from "@/components/PageTransition";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import Nav from "@/components/agency/Nav";
+import Footer from "@/components/agency/Footer";
+import MotionSystem from "@/components/agency/MotionSystem";
+import AgencyProvider from "@/components/agency/Provider";
+import MusicDock from "@/components/agency/MusicDock";
 import { profile, stack } from "@/data/content";
 import "@/styles/tokens.css";
+import "@/styles/agency.css";
 
 const neueMontreal = localFont({
   src: [
-    { path: "../../public/fonts/NeueMontreal-Light.otf", weight: "300", style: "normal" },
-    { path: "../../public/fonts/NeueMontreal-LightItalic.otf", weight: "300", style: "italic" },
-    { path: "../../public/fonts/NeueMontreal-Regular.otf", weight: "450", style: "normal" },
-    { path: "../../public/fonts/NeueMontreal-Italic.otf", weight: "450", style: "italic" },
-    { path: "../../public/fonts/NeueMontreal-Bold.otf", weight: "800", style: "normal" },
-    { path: "../../public/fonts/NeueMontreal-BoldItalic.otf", weight: "800", style: "italic" },
+    {
+      path: "../../public/fonts/NeueMontreal-Light.otf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/NeueMontreal-LightItalic.otf",
+      weight: "300",
+      style: "italic",
+    },
+    {
+      path: "../../public/fonts/NeueMontreal-Regular.otf",
+      weight: "450",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/NeueMontreal-Italic.otf",
+      weight: "450",
+      style: "italic",
+    },
+    {
+      path: "../../public/fonts/NeueMontreal-Bold.otf",
+      weight: "800",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/NeueMontreal-BoldItalic.otf",
+      weight: "800",
+      style: "italic",
+    },
   ],
   variable: "--font-neue",
+  display: "swap",
+});
+
+const agencyDisplay = localFont({
+  src: "../../public/fonts/Agency-Fraunces.ttf",
+  variable: "--font-agency-display",
   display: "swap",
 });
 
@@ -25,10 +57,11 @@ const siteUrl = "https://guedegbe.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: profile.seoTitle,
+    default: "Daniel Guedegbe — Design & développement, de l’idée à l’impact",
     template: `%s — ${profile.fullName}`,
   },
-  description: profile.seoDescription,
+  description:
+    "Portfolio de Daniel Guedegbe : sites immersifs, applications et architectures solides. Un esprit de studio et une exigence d’ingénieur, depuis Abidjan.",
   keywords: [
     profile.fullName,
     "Daniel Guedegbe",
@@ -49,26 +82,28 @@ export const metadata: Metadata = {
     canonical: siteUrl,
   },
   openGraph: {
-    title: profile.seoTitle,
-    description: profile.ogDescription,
+    title: "Daniel Guedegbe — De l’idée à l’impact",
+    description:
+      "Design sensible, code solide : sites immersifs, produits web et applications par Daniel Guedegbe, depuis Abidjan.",
     url: siteUrl,
     siteName: profile.fullName,
     type: "website",
     locale: "fr_FR",
     images: [
       {
-        url: "/images/headerbigImagefull.png",
-        width: 1677,
-        height: 938,
+        url: "/images/agency/og-agency.webp",
+        width: 1200,
+        height: 630,
         alt: profile.fullName,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: profile.seoTitle,
-    description: profile.ogDescription,
-    images: ["/images/headerbigImagefull.png"],
+    title: "Daniel Guedegbe — De l’idée à l’impact",
+    description:
+      "Design sensible, code solide : sites immersifs, produits web et applications par Daniel Guedegbe, depuis Abidjan.",
+    images: ["/images/agency/og-agency.webp"],
   },
   robots: {
     index: true,
@@ -93,7 +128,7 @@ const personJsonLd = {
   alternateName: profile.legalName,
   jobTitle: profile.role,
   url: siteUrl,
-  image: `${siteUrl}/images/headerbigImagefull.png`,
+  image: `${siteUrl}/images/agency/portrait-one.webp`,
   email: `mailto:${profile.email}`,
   telephone: profile.phone,
   address: {
@@ -105,19 +140,35 @@ const personJsonLd = {
   knowsAbout: stack,
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="fr" className={neueMontreal.variable} data-scroll-behavior="smooth">
-      <body>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
-        />
-        <PageTransition />
-        <Nav />
-        <main>{children}</main>
-        <Footer />
-        <WhatsAppButton />
+    <html
+      lang="fr"
+      className={`${neueMontreal.variable} ${agencyDisplay.variable}`}
+      data-scroll-behavior="smooth"
+    >
+      <body id="top">
+        <AgencyProvider>
+          <a href="#contenu" className="agency-skip">
+            Aller au contenu
+          </a>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+          />
+
+          <Nav />
+          <main id="contenu" tabIndex={-1}>
+            {children}
+          </main>
+          <Footer />
+          <MusicDock />
+          <MotionSystem />
+        </AgencyProvider>
       </body>
     </html>
   );

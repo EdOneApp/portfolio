@@ -34,3 +34,17 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+## Version agency
+
+La refonte créative est développée et déployée depuis la branche `agency`. `main` conserve la version précédente. Palette crème, terracotta et olive ; typographies Neue Montreal et Fraunces ; cartes de projets, effets de profondeur, révélations au scroll, mise en page responsive et respect des préférences de mouvements réduits.
+
+- Les 20 projets restent dans `src/data/content.ts`, BABI JUS en première position. La nouvelle interface est dans `src/components/agency/` et `src/styles/agency.css`.
+- Les fiches comportent captures et vues ordinateur/mobile, plus un site interactif pour les domaines dont les autorisations d’intégration ont été vérifiées. Liste dans `LivePreview.tsx`. Ordinateur, tablette et mobile simulent respectivement des largeurs de 1280, 768 et 390 px, mises à l’échelle selon l’espace disponible. Un lien direct et les captures restent disponibles si une intégration échoue.
+- Les réseaux fournis sont centralisés dans `src/components/agency/socials.ts`. Le contact utilise WhatsApp et le calendrier Cal.com existant, avec un lien externe de secours.
+- Le MP3 fourni par le propriétaire est `public/Damso - Sentimental (Paroles).mp3`. Le lecteur persiste entre les pages, tente la lecture immédiate et reprend au premier geste si le navigateur bloque l’autoplay sonore. Aucune méthode ne peut garantir le son automatique sur tous les navigateurs. Le bouton arrêt et le volume restent accessibles ; le choix d’arrêt est conservé localement.
+- Les photos fournies sont conservées dans `public/me1.jpeg`, `public/me2.jpeg`, `public/me3.png` ; leurs copies WebP optimisées sont dans `public/images/agency/`. Licence Fraunces : `public/fonts/Agency-Fraunces-OFL.txt`.
+- Workflow GitHub Pages : déclenchement sur `agency`, export statique `out/`, domaine conservé `guedegbe.com`. Ne pas fusionner dans `main` pour publier cette version.
+
+Vérification : `npm run build`, `npx tsc --noEmit --incremental false` et ESLint sur les fichiers modifiés.

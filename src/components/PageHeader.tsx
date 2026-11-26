@@ -1,12 +1,16 @@
-import RevealLines from "./RevealLines";
-import styles from "./PageHeader.module.css";
-
+import { Label } from "./agency/ui";
 export default function PageHeader({ title }: { title: string[] }) {
   return (
-    <header className={styles.header}>
-      <div className={styles.inner}>
-        <RevealLines as="h1" className={styles.title} lines={title} />
-      </div>
+    <header className="agency-page-head">
+      <Label>LE PARCOURS DERRIÈRE LES PROJETS</Label>
+      <h1>
+        {title.map((line, i) => (
+          <span key={line}>
+            {i === title.length - 1 && i > 0 ? <em>{line}</em> : line}
+            {i < title.length - 1 && <br />}
+          </span>
+        ))}
+      </h1>
     </header>
   );
 }

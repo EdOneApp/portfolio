@@ -1,23 +1,33 @@
 import type { Metadata } from "next";
-import PageHeader from "@/components/PageHeader";
-import WorkGrid from "@/components/WorkGrid";
-import { projects, profile } from "@/data/content";
-
-const description =
-  `${projects.length} projets présentés par Daniel Guedegbe : fintech, ERP, mobilité électrique, e-commerce, expériences web immersives, SIG et outillage open-source.`;
-
+import { projects } from "@/data/content";
+import ProjectArchive from "@/components/agency/ProjectArchive";
+import { Label, Asterisk } from "@/components/agency/ui";
 export const metadata: Metadata = {
-  title: "Projets",
-  description,
+  title: "Les réalisations",
+  description: `${projects.length} projets de Daniel Guedegbe : sites immersifs, produits numériques, applications et architectures backend.`,
   alternates: { canonical: "/work/" },
-  openGraph: { title: `Projets — ${profile.fullName}`, description, url: "/work/" },
 };
-
 export default function WorkPage() {
   return (
     <>
-      <PageHeader title={["Créer des produits", "numériques solides."]} />
-      <WorkGrid projects={projects} />
+      <header className="agency-page-head agency-work-head">
+        <Label>L’EXIGENCE RESTE. LES TERRAINS CHANGENT.</Label>
+        <h1>
+          Des idées,
+          <br />
+          <em>devenues réelles.</em>
+          <sup>({projects.length})</sup>
+        </h1>
+        <div>
+          <p>
+            Web, mobile, commerce, fintech, outils métier.
+            <br />
+            Chaque projet a son histoire. Voici les leurs.
+          </p>
+          <Asterisk />
+        </div>
+      </header>
+      <ProjectArchive />
     </>
   );
 }

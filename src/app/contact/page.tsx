@@ -1,64 +1,83 @@
+import { socials } from "@/components/agency/socials";
 import type { Metadata } from "next";
 import Image from "next/image";
-import Reveal from "@/components/Reveal";
-import RevealLines from "@/components/RevealLines";
-import CalEmbed from "@/components/CalEmbed";
 import { profile } from "@/data/content";
-import styles from "./page.module.css";
-
-const description =
-  "Réservez directement un créneau de 30 minutes avec Daniel Guedegbe pour discuter de votre projet backend, mobile, fintech, e-gouvernement, SIG ou e-commerce.";
-
+import ContactBrief from "@/components/agency/ContactBrief";
+import { Label, Arrow, Asterisk } from "@/components/agency/ui";
 export const metadata: Metadata = {
-  title: "Contact",
-  description,
+  title: "Un projet en tête ?",
+  description:
+    "Contactez Daniel Guedegbe pour imaginer et construire votre prochain site, produit web, application ou plateforme.",
   alternates: { canonical: "/contact/" },
-  openGraph: { title: `Contact — ${profile.fullName}`, description, url: "/contact/" },
 };
-
-export default function ContactPage() {
+export default function Contact() {
   return (
     <>
-      <header className={styles.header}>
-        <RevealLines
-          as="h1"
-          className={styles.title}
-          lines={[
-            <span key="l1">
-              <span className={styles.avatar}>
-                <Image src="/images/profile.jpg" alt="" fill sizes="2em" />
-              </span>{" "}
-              Discutons d&apos;un
-            </span>,
-            "projet ensemble",
-          ]}
-        />
+      <header className="agency-page-head agency-contact-head">
+        <Label>LE DÉBUT DE QUELQUE CHOSE DE BIEN.</Label>
+        <h1>
+          Vous avez l’idée.
+          <br />
+          <em>Parlons de la suite.</em>
+        </h1>
+        <Asterisk />
       </header>
-
-      <div className={styles.directWrap}>
-        <Reveal delay={0.05} className={styles.directRow}>
-          <a className={styles.sideLink} href={`mailto:${profile.email}`}>
-            {profile.email}
+      <section className="agency-contact-body agency-section">
+        <aside>
+          <div className="agency-contact-person">
+            <Image
+              src="/images/agency/portrait-one.webp"
+              alt="Daniel Guedegbe"
+              width={80}
+              height={80}
+            />
+            <div>
+              <h2>Daniel Guedegbe</h2>
+              <p>Votre interlocuteur, du début à la suite.</p>
+            </div>
+          </div>
+          <p>
+            Un projet bien défini ou encore quelques idées en vrac ?
+            Racontez-moi. On regardera ensemble ce qui peut prendre forme.
+          </p>
+          <a className="agency-contact-link" href={`mailto:${profile.email}`}>
+            <small>PAR EMAIL</small>
+            <span>
+              {profile.email}
+              <Arrow />
+            </span>
           </a>
-          <a className={styles.sideLink} href={profile.whatsappHref} target="_blank" rel="noopener noreferrer">
-            {profile.phone}
+          <a
+            className="agency-contact-link"
+            href="https://wa.me/2250748733365"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <small>SUR WHATSAPP</small>
+            <span>
+              +225 07 48 73 33 65
+              <Arrow />
+            </span>
           </a>
-          <a className={styles.sideLink} href={profile.linkedin} target="_blank" rel="noopener noreferrer">
-            LinkedIn
-          </a>
-          <a className={styles.sideLink} href={profile.github} target="_blank" rel="noopener noreferrer">
-            GitHub
-          </a>
-        </Reveal>
-      </div>
-
-      <section className={styles.calSection}>
-        <Reveal>
-          <h2 className={styles.calHeading}>Réservez directement un appel de 30 minutes.</h2>
-        </Reveal>
-        <Reveal delay={0.1} className={styles.calWrap}>
-          <CalEmbed />
-        </Reveal>
+          <div className="agency-contact-social">
+            {socials.map((s) => (
+              <a
+                key={s.label}
+                href={s.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {s.label} ↗
+              </a>
+            ))}
+          </div>
+          <p className="agency-contact-location">
+            ● À Abidjan. Disponible à distance.
+          </p>
+        </aside>
+        <div>
+          <ContactBrief />
+        </div>
       </section>
     </>
   );

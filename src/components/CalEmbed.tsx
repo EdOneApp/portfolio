@@ -9,10 +9,10 @@ export default function CalEmbed() {
     (async () => {
       const cal = await getCalApi({ namespace: "30min" });
       cal("ui", {
-        theme: "dark",
+        theme: "light",
         cssVarsPerTheme: {
-          dark: { "cal-brand": "#455CE9" },
-          light: { "cal-brand": "#455CE9" },
+          dark: { "cal-brand": "#e8613b" },
+          light: { "cal-brand": "#e8613b" },
         },
         hideEventTypeDetails: false,
         layout: "month_view",
@@ -25,7 +25,7 @@ export default function CalEmbed() {
       namespace="30min"
       calLink={profile.calLink}
       style={{ width: "100%", height: "100%", minHeight: "640px" }}
-      config={{ layout: "month_view", theme: "dark" }}
+      config={{ layout: "month_view", theme: "light" }}
     />
   );
 }
