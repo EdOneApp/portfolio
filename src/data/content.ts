@@ -241,6 +241,31 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "ivoirebike",
+    title: "Ivoire Bike",
+    category: "Concept de prospection · showroom moto immersif",
+    description:
+      "Proposition de site de visibilité pour une entreprise ivoirienne de vente de motos : identité rouge et noire, logo restauré, vraie moto détourée dans un décor 3D, caméra au défilement et loader cascade avec gouttes et reflets. 55 pages, catalogue illustratif de 16 motos et 13 équipements, recherche, filtres, comparaison et sélection locale. Parcours atelier et domicile, guides, carte du point GPS transmis et contact WhatsApp. Les modèles, stocks, prix et services restent à confirmer par l’entreprise. Kit motion original, version mobile et déploiement GitHub Pages en HTTPS.",
+    tags: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Three.js",
+      "Leaflet",
+      "Motion design",
+    ],
+    link: "https://ivoirebike.myoctogone.com/",
+    linkLabel: "Explorer Ivoire Bike",
+    image: "/images/ivoirebike-web.webp",
+    mobileImage: "/images/ivoirebike-mobile.webp",
+    stats: [
+      { value: "29", label: "Produits illustratifs" },
+      { value: "55", label: "Pages de contenu" },
+      { value: "3D", label: "Décor immersif" },
+    ],
+    featured: true,
+  },
+  {
     slug: "babijus",
     title: "BABI JUS",
     category: "Site vitrine immersif & boissons ivoiriennes",
