@@ -4,6 +4,7 @@ import Image from "next/image";
 import type { Project } from "@/data/content";
 import { Arrow, Label } from "./ui";
 const available = [
+  "sixcordes",
   "ivoirebike",
   "babijus",
   "bantoo",

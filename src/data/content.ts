@@ -241,6 +241,24 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "sixcordes",
+    title: "Six Cordes",
+    category: "Maison d’instruments · expérience web musicale",
+    description:
+      "Site de présentation d’une maison d’instruments à Abidjan : direction chaleureuse, cordes interactives et démonstrations sonores synthétisées avec Web Audio. Catalogue illustratif de 33 références, 45 pages, filtres par famille, niveau, marque et budget, galerie, atelier et sélection pour devis WhatsApp. Musique fournie en boucle, contrôle commun avec les instruments et respect de l’arrêt volontaire. Captures web et mobile, expérience responsive et déploiement GitHub Pages en HTTPS. Catalogue, prix et coordonnées de démonstration à confirmer.",
+    tags: ["Next.js", "React", "GSAP", "Web Audio", "Framer Motion"],
+    link: "https://sixcordes.myoctogone.com/",
+    linkLabel: "Explorer Six Cordes",
+    image: "/images/sixcordes-web.webp",
+    mobileImage: "/images/sixcordes-mobile.webp",
+    stats: [
+      { value: "33", label: "Références illustratives" },
+      { value: "45", label: "Pages de contenu" },
+      { value: "Audio", label: "Cordes interactives" },
+    ],
+    featured: true,
+  },
+  {
     slug: "ivoirebike",
     title: "Ivoire Bike",
     category: "Concept de prospection · showroom moto immersif",
@@ -257,6 +275,18 @@ export const projects: Project[] = [
       { value: "hard", label: "Branche déployée" },
     ],
     featured: true,
+  },
+  {
+    slug: "cacaosat",
+    title: "CacaoSat",
+    category: "Agritech / Satellite & traçabilité",
+    description:
+      "Une expérience immersive de la traçabilité du cacao ivoirien : terrain 3D procédural, satellite en orbite, caméra au défilement et cartographie interactive. Vues agent, coopérative et exportateur, lots et rapport GeoJSON avec des données synthétiques clairement séparées de toute certification réelle.",
+    tags: ["Next.js", "Three.js", "Leaflet", "GeoJSON", "Satellite"],
+    link: "https://cacaosat.myoctogone.com/",
+    linkLabel: "Explorer CacaoSat",
+    image: "/images/cacaosat-web.webp",
+    mobileImage: "/images/cacaosat-mobile.webp",
   },
   {
     slug: "babijus",
@@ -478,18 +508,7 @@ export const projects: Project[] = [
     image: "/images/maresie-web.webp",
     mobileImage: "/images/maresie-mobile.webp",
   },
-  {
-    slug: "cacaosat",
-    title: "CacaoSat",
-    category: "Agritech / Satellite & traçabilité",
-    description:
-      "Une expérience immersive de la traçabilité du cacao ivoirien : terrain 3D procédural, satellite en orbite, caméra au défilement et cartographie interactive. Vues agent, coopérative et exportateur, lots et rapport GeoJSON avec des données synthétiques clairement séparées de toute certification réelle.",
-    tags: ["Next.js", "Three.js", "Leaflet", "GeoJSON", "Satellite"],
-    link: "https://cacaosat.myoctogone.com/",
-    linkLabel: "Explorer CacaoSat",
-    image: "/images/cacaosat-web.webp",
-    mobileImage: "/images/cacaosat-mobile.webp",
-  },
+
   {
     slug: "myoctogone",
     title: "MyOctogone",

@@ -21,12 +21,16 @@ export default function AgencyHome() {
   const lift = useTransform(scrollYProgress, [0, 1], [0, -95]),
     rotate = useTransform(scrollYProgress, [0, 1], [-7, 3]);
   const selected = [
+    "sixcordes",
+    "ivoirebike",
+    "cacaosat",
     "babijus",
     "myoctogone",
     "salmacreation",
     "spaghetti-abidjan",
     "edone",
     "brvm-analytics",
+    "momofund",
   ]
     .map((slug) => projects.find((p) => p.slug === slug)!)
     .filter(Boolean);
