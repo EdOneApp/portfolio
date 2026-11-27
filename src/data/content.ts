@@ -245,7 +245,7 @@ export const projects: Project[] = [
     title: "Ivoire Bike",
     category: "Concept de prospection · showroom moto immersif",
     description:
-      "Concept de site de visibilité pour une entreprise ivoirienne de vente de motos. Refonte immersive fournie et intégrée sur la branche hard : roue de moto et emblème en 3D, vidéos, défilement fluide, transitions et catalogue filtrable. 21 motos et 8 équipements illustratifs, fiches détaillées, sélection pour devis WhatsApp, services atelier et carte des points de vente. Prix, avis, chiffres et implantations secondaires sont des exemples à valider. Version responsive déployée sur GitHub Pages en HTTPS.",
+      "Concept de site de visibilité pour une entreprise ivoirienne de vente de motos. Refonte immersive fournie et intégrée sur la branche hard : roue de moto et emblème en 3D, vidéos, défilement fluide, transitions et catalogue filtrable. 21 motos et 8 équipements illustratifs, fiches détaillées, sélection pour devis WhatsApp, services atelier et cartes OpenStreetMap sans clé API. Musique fournie en boucle avec contrôle sonore et reprise au premier geste si la lecture automatique est bloquée. Prix, avis, chiffres et implantations secondaires sont des exemples à valider. Version responsive déployée sur GitHub Pages en HTTPS.",
     tags: ["Next.js", "React", "Three.js", "GSAP", "Framer Motion", "Leaflet"],
     link: "https://ivoirebike.myoctogone.com/",
     linkLabel: "Explorer Ivoire Bike",
