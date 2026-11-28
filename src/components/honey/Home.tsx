@@ -14,7 +14,7 @@ const featured = [
   "ivoirebike",
   "cacaosat",
   "babijus",
-  "myoctogone",
+  "akservices",
   "salmacreation",
   "edone",
 ];

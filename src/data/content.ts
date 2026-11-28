@@ -277,6 +277,24 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    slug: "akservices",
+    title: "AK Construction Services",
+    category: "BTP & foncier · expérience 3D immersive",
+    description:
+      "Site d’AK Construction Services, entreprise de construction et d’immobilier à Abidjan : terrains, construction et rénovation. Loader 3D d’un immeuble qui s’assemble, hero 3D où un lotissement se construit au défilement, du terrain nu jusqu’à la remise des clés. Plan de lots interactif, comparateur avant/après des chantiers, présentation des services et formulaires de demande envoyés sur WhatsApp. Logo et charte graphique créés pour la marque. Responsive et déployé sur GitHub Pages en HTTPS.",
+    tags: ["Next.js", "Three.js", "GSAP", "Identité visuelle", "WhatsApp"],
+    link: "https://akservices.myoctogone.com/",
+    linkLabel: "Explorer AK Construction",
+    image: "/images/akservices-web.webp",
+    mobileImage: "/images/akservices-mobile.webp",
+    stats: [
+      { value: "3D", label: "Lotissement construit au défilement" },
+      { value: "Lots", label: "Plan interactif des terrains" },
+      { value: "Marque", label: "Logo & charte créés" },
+    ],
+    featured: true,
+  },
+  {
     slug: "ivoirebike",
     title: "Ivoire Bike",
     category: "Concept de prospection · showroom moto immersif",

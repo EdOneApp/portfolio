@@ -6,6 +6,7 @@ import { Arrow, Eyebrow } from "./ui";
 const available = [
   "sixcordes",
   "megamonde",
+  "akservices",
   "ivoirebike",
   "babijus",
   "bantoo",
