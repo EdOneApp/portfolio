@@ -10,6 +10,7 @@ export const groups = [
 export type GroupId = (typeof groups)[number]["id"];
 
 export const projectGroup: Record<string, Exclude<GroupId, "all">[]> = {
+  ynemstore: ["immersif", "commerce"],
   sixcordes: ["immersif"],
   megamonde: ["immersif", "commerce"],
   akservices: ["immersif"],

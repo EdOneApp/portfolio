@@ -241,6 +241,24 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "ynemstore",
+    title: "Ynem Store",
+    category: "Boutique Apple · e-commerce 3D immersif",
+    description:
+      "Site de Ynem Store, boutique de produits Apple authentiques au Marché Samsung de Treichville : « Connectez-vous à l’authenticité ». Logo redessiné en vectoriel à partir d’une photo du sac, loader 3D où les pièces du logo s’emboîtent comme un connecteur, bannières 3D animées et section « Anatomie d’un original » où iPhone, MacBook, Apple Watch et AirPods se démontent au défilement, pièce par pièce, avec étiquettes de vérification. Catalogue de 25 produits en 6 catégories avec recherche instantanée et filtres (série, état, stockage, couleur, prix), fiches produit avec sélecteurs de couleur et de stockage et visionneuse 3D éclatée, panier persistant et commande envoyée sur WhatsApp avec numéro de commande. Visuels produits rendus en 3D par le code, vraies photos des clients tirées de TikTok, pages reprise, Authentiques et contact. Responsive, SEO produit et déployé sur GitHub Pages en HTTPS.",
+    tags: ["Next.js", "React Three Fiber", "Commande WhatsApp", "GSAP", "Zustand"],
+    link: "https://ynemstore.myoctogone.com/",
+    linkLabel: "Explorer Ynem Store",
+    image: "/images/ynemstore-web.webp",
+    mobileImage: "/images/ynemstore-mobile.webp",
+    stats: [
+      { value: "25", label: "Produits Apple en 6 catégories" },
+      { value: "3D", label: "Appareils démontés pièce par pièce" },
+      { value: "WhatsApp", label: "Commande avec numéro en 1 clic" },
+    ],
+    featured: true,
+  },
+  {
     slug: "sixcordes",
     title: "Six Cordes",
     category: "Maison d’instruments · expérience web musicale",

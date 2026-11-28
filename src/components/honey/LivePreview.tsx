@@ -4,6 +4,7 @@ import Image from "next/image";
 import type { Project } from "@/data/content";
 import { Arrow, Eyebrow } from "./ui";
 const available = [
+  "ynemstore",
   "sixcordes",
   "megamonde",
   "akservices",

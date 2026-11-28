@@ -12,11 +12,14 @@ const featured = [
   "akservices",
   "ivoirebike",
   "megamonde",
-  "cacaosat",
+  "ynemstore",
   "babijus",
   "sixcordes",
   "salmacreation",
   "edone",
+  "cacaosat",
+  "dabaliexpress",
+  "allocar",
 ];
 
 export default function Home() {
