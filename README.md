@@ -63,4 +63,5 @@ Refonte complète développée sur la branche `honey` (créée depuis `agency`).
 - Parcours complet sur `/parcours` (expérience, formation, distinctions, compétences) ; `/experience`, `/education` et `/certifications` restent accessibles.
 - Espace devis `/devis` (`QuoteWizard.tsx`, options dans `quote-config.ts`) : 9 types de projet combinables, profil (personnel, entreprise, startup, institution, ONG, école), questions détaillées par type, budget en FCFA, délais, éléments existants, coordonnées, récapitulatif avec référence. La validation ouvre WhatsApp (+225 07 48 73 33 65) avec le message formaté ; copie et email en secours. Brouillon conservé localement, rien n’est envoyé à un serveur. `?type=site|mobile|webapp|presence|image|pages|data|system` présélectionne un type.
 - Contact : formulaire WhatsApp rapide et calendrier Cal.com intégré. Musique de fond conservée (même préférence marche/arrêt que `agency`).
+- Workflow GitHub Pages : déclenchement sur `honey` (export `out/`, domaine `guedegbe.com`). Pour revenir à agency, remettre `agency` dans le workflow.
 - Image de partage : `public/images/honey/og-honey.jpg`.
