@@ -8,7 +8,16 @@ import Counter from "./Counter";
 import { services } from "./services-data";
 import { Arrow, Btn, Eyebrow, Mark, SectionHead } from "./ui";
 
-const featured = ["sixcordes", "ivoirebike", "cacaosat", "babijus", "myoctogone", "salmacreation"];
+const featured = [
+  "sixcordes",
+  "megamonde",
+  "ivoirebike",
+  "cacaosat",
+  "babijus",
+  "myoctogone",
+  "salmacreation",
+  "edone",
+];
 
 export default function Home() {
   const selection = featured.map((s) => projects.find((p) => p.slug === s)!).filter(Boolean);

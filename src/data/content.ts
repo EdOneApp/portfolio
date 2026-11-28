@@ -259,6 +259,24 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    slug: "megamonde",
+    title: "Megamonde",
+    category: "Concessionnaire motos · showroom 3D immersif",
+    description:
+      "Site de Megamonde, concessionnaire de motos à Treichville (Abidjan) : « C’est pour tout le monde. » Loader 3D où le logo M s’assemble en chrome, globe 3D en pointillés avec arcs vers Abidjan et showroom horizontal épinglé au défilement. Catalogue filtrable de 16 modèles, du scooter au tricycle en passant par l’électrique, avec fiches techniques, conseiller express, services et entretien, accessoires, carte de Côte d’Ivoire et Google Maps des points de vente. Formulaires vers WhatsApp, bande-son en boucle avec contrôle du son. Motos dédouanées et homologuées par l’État. Responsive et déployé sur GitHub Pages en HTTPS.",
+    tags: ["Next.js", "React Three Fiber", "GSAP", "Three.js", "Google Maps"],
+    link: "https://megamonde.myoctogone.com/",
+    linkLabel: "Explorer Megamonde",
+    image: "/images/megamonde-web.webp",
+    mobileImage: "/images/megamonde-mobile.webp",
+    stats: [
+      { value: "16", label: "Modèles au catalogue" },
+      { value: "3D", label: "Logo, globe & showroom" },
+      { value: "24 mois", label: "Garantie mise en avant" },
+    ],
+    featured: true,
+  },
+  {
     slug: "ivoirebike",
     title: "Ivoire Bike",
     category: "Concept de prospection · showroom moto immersif",

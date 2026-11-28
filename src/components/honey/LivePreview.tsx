@@ -5,6 +5,7 @@ import type { Project } from "@/data/content";
 import { Arrow, Eyebrow } from "./ui";
 const available = [
   "sixcordes",
+  "megamonde",
   "ivoirebike",
   "babijus",
   "bantoo",
