@@ -423,8 +423,8 @@ export const projects: Project[] = [
     title: "XOFA · BRVM Analytics",
     category: "Données financières",
     description:
-      "Analyse des cours, volumes et indices des sociétés cotées à la Bourse Régionale des Valeurs Mobilières, sur huit pays de l'UEMOA. XOFA rassemble les données publiques du marché dans un tableau de bord accessible sur ordinateur et mobile.",
-    tags: ["Django", "Redis", "REST API", "Fintech"],
+      "La bourse de l'UEMOA, lisible par tous : cours, indices et obligations de la BRVM historisés chaque jour, cote en 3D, carte thermique, comparateur, bons plans calculés, simulateur, fiches des 48 sociétés cotées, annuaire des SGI et SGO, guide du débutant, lexique et Kauri, un assistant qui répond avec les vraies données du marché.",
+    tags: ["Next.js", "Three.js", "Data viz", "Fintech"],
     link: "https://xofa.myoctogone.com/",
     image: "/images/xofa-web.webp",
     mobileImage: "/images/xofa-mobile.webp",
