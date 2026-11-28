@@ -9,17 +9,14 @@ import { services } from "./services-data";
 import { Arrow, Btn, Eyebrow, Mark, SectionHead } from "./ui";
 
 const featured = [
-  "sixcordes",
-  "megamonde",
+  "akservices",
   "ivoirebike",
+  "megamonde",
   "cacaosat",
   "babijus",
-  "akservices",
-  "dabaliexpress",
+  "sixcordes",
   "salmacreation",
   "edone",
-  "allocar",
-  "sentinelle-rh",
 ];
 
 export default function Home() {
