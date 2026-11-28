@@ -32,6 +32,9 @@
 html {
   -webkit-text-size-adjust: 100%;
   scroll-padding-top: 100px;
+  overflow-x: hidden;
+  overflow-x: clip;
+  touch-action: pan-y;
 }
 body {
   margin: 0;
@@ -43,6 +46,17 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  overflow-x: clip;
+  max-width: 100vw;
+  overscroll-behavior-x: none;
+}
+main,
+.h-footer,
+.h-section,
+.h-hero,
+.h-page-hero {
+  max-width: 100%;
+  overflow-x: clip;
 }
 html.h-loading body {
   overflow: hidden;
@@ -1061,6 +1075,7 @@ html.h-loading .h-curtain {
 /* page hero (inner pages) */
 .h-page-hero {
   position: relative;
+  grid-template-columns: minmax(0, 1fr);
   padding: 170px var(--pad) clamp(60px, 8vw, 110px);
   color: var(--cream);
   background: linear-gradient(180deg, var(--w-900), var(--w-800));
@@ -3469,11 +3484,13 @@ html.h-loading .h-curtain {
 /* ---------- contact ---------- */
 .h-contact-links {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
   gap: 12px;
   max-width: 760px;
 }
 .h-contact-links a {
+  overflow-wrap: anywhere;
+  min-width: 0;
   display: grid;
   gap: 4px;
   padding: 20px 24px;

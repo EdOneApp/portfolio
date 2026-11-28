@@ -28,6 +28,9 @@ export default function MotionSystem() {
       });
     }
 
+    const noZoom = (e: Event) => e.preventDefault();
+    document.addEventListener("gesturestart", noZoom);
+    document.addEventListener("gesturechange", noZoom);
     const onScroll = () => {
       const max = document.documentElement.scrollHeight - innerHeight;
       if (progress.current)
@@ -94,6 +97,8 @@ export default function MotionSystem() {
       observer?.disconnect();
       els.forEach((e) => e.classList.remove("h-will-reveal"));
       window.removeEventListener("scroll", onScroll);
+      document.removeEventListener("gesturestart", noZoom);
+      document.removeEventListener("gesturechange", noZoom);
       window.removeEventListener("pointermove", move);
       cancelAnimationFrame(raf);
     };
