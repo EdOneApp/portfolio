@@ -15,8 +15,11 @@ const featured = [
   "cacaosat",
   "babijus",
   "akservices",
+  "dabaliexpress",
   "salmacreation",
   "edone",
+  "allocar",
+  "sentinelle-rh",
 ];
 
 export default function Home() {

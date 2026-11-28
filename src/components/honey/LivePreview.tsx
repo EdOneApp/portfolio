@@ -7,6 +7,7 @@ const available = [
   "sixcordes",
   "megamonde",
   "akservices",
+  "dabaliexpress",
   "ivoirebike",
   "babijus",
   "bantoo",

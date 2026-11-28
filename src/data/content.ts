@@ -295,6 +295,24 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    slug: "dabaliexpress",
+    title: "Dabali Xpress",
+    category: "Restauration rapide · commande en ligne 3D",
+    description:
+      "Site de Dabali Xpress, première chaîne de fast-food ivoirien : garba, foutou, placali et poulet Makô servis en 10 minutes. Loader 3D où la cuillère et la fourchette du logo se croisent sur l’ellipse rouge, hero 3D d’une assiette de garba qui tourne au rythme du curseur. Menu filtrable avec photos et prix, carte Google Maps des neuf restaurants avec statut ouvert ou fermé en temps réel et géolocalisation du plus proche, panier avec accompagnements et boissons, puis commande envoyée sur le WhatsApp du restaurant avec numéro, récapitulatif et mode de retrait. Pages histoire, franchise et recrutement. Responsive et déployé sur GitHub Pages en HTTPS.",
+    tags: ["Next.js", "Three.js", "Commande WhatsApp", "Google Maps", "GSAP"],
+    link: "https://dabaliexpress.myoctogone.com/",
+    linkLabel: "Commander chez Dabali",
+    image: "/images/dabaliexpress-web.webp",
+    mobileImage: "/images/dabaliexpress-mobile.webp",
+    stats: [
+      { value: "10 min", label: "Promesse portée par le loader 3D" },
+      { value: "9", label: "Restaurants sur la carte" },
+      { value: "WhatsApp", label: "Commande confirmée en 1 clic" },
+    ],
+    featured: true,
+  },
+  {
     slug: "ivoirebike",
     title: "Ivoire Bike",
     category: "Concept de prospection · showroom moto immersif",

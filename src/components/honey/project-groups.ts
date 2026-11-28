@@ -13,6 +13,7 @@ export const projectGroup: Record<string, Exclude<GroupId, "all">[]> = {
   sixcordes: ["immersif"],
   megamonde: ["immersif", "commerce"],
   akservices: ["immersif"],
+  dabaliexpress: ["immersif", "commerce"],
   ivoirebike: ["immersif", "commerce"],
   cacaosat: ["immersif", "data"],
   babijus: ["immersif", "commerce"],
