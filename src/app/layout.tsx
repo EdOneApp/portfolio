@@ -9,6 +9,7 @@ import MotionSystem from "@/components/honey/MotionSystem";
 import Loader from "@/components/honey/Loader";
 import MotionProvider from "@/components/honey/Provider";
 import MusicDock from "@/components/honey/MusicDock";
+import Bot from "@/components/honey/Bot";
 import { profile, stack } from "@/data/content";
 import "@/styles/honey.css";
 
@@ -189,6 +190,7 @@ export default function RootLayout({
           </main>
           <Footer />
           {backgroundAudio && <MusicDock src={backgroundAudio} />}
+          <Bot />
           <MotionSystem />
         </MotionProvider>
       </body>
