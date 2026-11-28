@@ -1,35 +1,23 @@
 import type { Metadata } from "next";
-import PageHeader from "@/components/PageHeader";
-import CardGrid from "@/components/CardGrid";
-import { certifications, awards, profile } from "@/data/content";
-
-const description =
-  "Certifications IBM, Microsoft, AXELOS et distinctions de Daniel Guedegbe : 1er Prix Moov Africa CI StartUp Challenge 2025, finaliste ICESCO, Hackathon MTN MTS.";
-
+import Link from "next/link";
+import { PageHero } from "@/components/honey/ui";
+import { CertificationSection } from "@/components/honey/Parcours";
 export const metadata: Metadata = {
-  title: "Certifications & distinctions",
-  description,
+  title: "Distinctions",
+  description: "Distinctions et certifications de Daniel Guedegbe : prix Moov Africa, hackathon MTN, IBM, Microsoft, AXELOS.",
   alternates: { canonical: "/certifications/" },
-  openGraph: { title: `Certifications & distinctions — ${profile.fullName}`, description, url: "/certifications/" },
 };
-
-export default function CertificationsPage() {
+export default function Page() {
   return (
     <>
-      <PageHeader title={["Certifications", "& distinctions"]} />
-      <CardGrid
-        heading="Certifications"
-        cards={certifications.map((c) => ({ title: c.title, subtitle: c.issuer }))}
-      />
-      <CardGrid
-        heading="Distinctions"
-        cards={awards.map((a) => ({
-          title: a.title,
-          subtitle: a.status,
-          date: a.date,
-          text: a.text,
-        }))}
-      />
+      <PageHero eyebrow="Parcours" title="Distinctions." em="Une étape du chemin.">
+        <p>
+          <Link href="/parcours" className="h-link is-light">
+            Voir le parcours complet ↗
+          </Link>
+        </p>
+      </PageHero>
+      <CertificationSection />
     </>
   );
 }

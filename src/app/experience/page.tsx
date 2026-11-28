@@ -1,31 +1,23 @@
 import type { Metadata } from "next";
-import PageHeader from "@/components/PageHeader";
-import Timeline from "@/components/Timeline";
-import { journey, profile } from "@/data/content";
-
-const description =
-  "Parcours professionnel de Daniel Guedegbe : 6+ ans d'ingénierie logicielle entre Abidjan, Paris et le remote, du développement mobile au Tech Lead.";
-
+import Link from "next/link";
+import { PageHero } from "@/components/honey/ui";
+import { ExperienceSection } from "@/components/honey/Parcours";
 export const metadata: Metadata = {
-  title: "Expérience professionnelle",
-  description,
+  title: "Expérience",
+  description: "Expérience professionnelle de Daniel Guedegbe : six ans d’ingénierie logicielle, du mobile au Tech Lead.",
   alternates: { canonical: "/experience/" },
-  openGraph: { title: `Expérience professionnelle — ${profile.fullName}`, description, url: "/experience/" },
 };
-
-export default function ExperiencePage() {
+export default function Page() {
   return (
     <>
-      <PageHeader title={["Expérience", "professionnelle"]} />
-      <Timeline
-        items={journey.map((j) => ({
-          period: j.period,
-          title: j.role,
-          subtitle: j.place,
-          description: j.description,
-          current: j.current,
-        }))}
-      />
+      <PageHero eyebrow="Parcours" title="Expérience." em="Une étape du chemin.">
+        <p>
+          <Link href="/parcours" className="h-link is-light">
+            Voir le parcours complet ↗
+          </Link>
+        </p>
+      </PageHero>
+      <ExperienceSection />
     </>
   );
 }

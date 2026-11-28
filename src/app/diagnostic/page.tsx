@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Diagnostic from "@/components/agency/Diagnostic";
-import { Label } from "@/components/agency/ui";
+import Diagnostic from "@/components/honey/Diagnostic";
+import { PageHero } from "@/components/honey/ui";
 export const metadata: Metadata = {
   title: "Test gratuit de votre présence en ligne",
   description:
@@ -10,20 +10,13 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <header className="agency-page-head">
-        <Label>GRATUIT / SANS COMPTE / POUR VOTRE ACTIVITÉ</Label>
-        <h1>
-          Et si un client
-          <br />
-          <em>vous cherchait ?</em>
-        </h1>
-        <p className="presence-intro">
-          Saisissez votre nom ou celui de votre entreprise. Retrouvez les
-          informations publiques accessibles et regardez ce que vos futurs
-          clients peuvent trouver.
+      <PageHero eyebrow="Gratuit · sans compte" title="Et si un client" em="vous cherchait ?">
+        <p>
+          Saisissez votre nom ou celui de votre entreprise. Retrouvez les informations publiques
+          accessibles et regardez ce que vos futurs clients peuvent trouver.
         </p>
-      </header>
-      <section className="agency-section diagnostic-section">
+      </PageHero>
+      <section className="h-section diagnostic-section">
         <Diagnostic />
       </section>
     </>

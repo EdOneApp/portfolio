@@ -52,3 +52,15 @@ Vérification : `npm run build`, `npx tsc --noEmit --incremental false` et ESLin
 Le lecteur sonore est inclus dans l’export uniquement lorsque le fichier MP3 est présent au moment du build. Le MP3 reste hors du dépôt tant que les droits de diffusion publique ne sont pas confirmés. La refonte peut donc être publiée sans fichier audio ni lecteur vide.
 
 La diffusion du morceau a été confirmée par le propriétaire. La copie publiée et lue par le site est `public/audio/damso-sentimental.mp3`, encodée en MP3 standard à 160 kbit/s. Le fichier fourni initialement utilisait le codec Opus malgré son extension ; il est conservé localement, sans être recopié dans les prochains exports GitHub Pages.
+
+## Version honey
+
+Refonte complète développée sur la branche `honey` (créée depuis `agency`). Palette bordeaux, or et ivoire ; typographies Neue Montreal et Fraunces conservées.
+
+- Interface dans `src/components/honey/` et `src/styles/honey.css`. Les anciens composants `agency` et hérités ont été retirés de cette branche (ils restent sur `agency`).
+- Loader animé au premier chargement de la session (`Loader.tsx`), rideau de transition entre pages (`src/app/template.tsx`), scène 3D Three.js dans le hero (`HeroScene.tsx`), carrousel 3D des 22 projets (`ProjectRing.tsx`), cartes à inclinaison 3D (`data-tilt`, géré par `MotionSystem.tsx`). Tout respecte `prefers-reduced-motion`.
+- Fiches projet : site en direct (ordinateur, tablette, mobile avec cadre de téléphone), captures et maquettes laptop/mobile (`LivePreview.tsx`, `DeviceFrame.tsx`).
+- Parcours complet sur `/parcours` (expérience, formation, distinctions, compétences) ; `/experience`, `/education` et `/certifications` restent accessibles.
+- Espace devis `/devis` (`QuoteWizard.tsx`, options dans `quote-config.ts`) : 9 types de projet combinables, profil (personnel, entreprise, startup, institution, ONG, école), questions détaillées par type, budget en FCFA, délais, éléments existants, coordonnées, récapitulatif avec référence. La validation ouvre WhatsApp (+225 07 48 73 33 65) avec le message formaté ; copie et email en secours. Brouillon conservé localement, rien n’est envoyé à un serveur. `?type=site|mobile|webapp|presence|image|pages|data|system` présélectionne un type.
+- Contact : formulaire WhatsApp rapide et calendrier Cal.com intégré. Musique de fond conservée (même préférence marche/arrêt que `agency`).
+- Image de partage : `public/images/honey/og-honey.jpg`.

@@ -17,6 +17,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/services",
     "/presence-digitale",
     "/diagnostic",
+    "/parcours",
+    "/devis",
   ].map((route) => ({
     url: `${siteUrl}${route}/`,
     lastModified: new Date(),

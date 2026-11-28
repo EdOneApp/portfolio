@@ -1,4 +1,4 @@
-import AgencyHome from "@/components/agency/Home";
-export default function Home() {
-  return <AgencyHome />;
+import Home from "@/components/honey/Home";
+export default function Page() {
+  return <Home />;
 }

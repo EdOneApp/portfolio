@@ -1,33 +1,22 @@
 import type { Metadata } from "next";
 import { projects } from "@/data/content";
-import ProjectArchive from "@/components/agency/ProjectArchive";
-import { Label, Asterisk } from "@/components/agency/ui";
+import ProjectsExplorer from "@/components/honey/ProjectsExplorer";
+import { PageHero } from "@/components/honey/ui";
 export const metadata: Metadata = {
   title: "Les réalisations",
-  description: `${projects.length} projets de Daniel Guedegbe : sites immersifs, produits numériques, applications et architectures backend.`,
+  description: `${projects.length} projets de Daniel Guedegbe : sites immersifs, e-commerce, applications, plateformes et data, à explorer en direct.`,
   alternates: { canonical: "/work/" },
 };
 export default function WorkPage() {
   return (
     <>
-      <header className="agency-page-head agency-work-head">
-        <Label>L’EXIGENCE RESTE. LES TERRAINS CHANGENT.</Label>
-        <h1>
-          Des idées,
-          <br />
-          <em>devenues réelles.</em>
-          <sup>({projects.length})</sup>
-        </h1>
-        <div>
-          <p>
-            Web, mobile, commerce, fintech, outils métier.
-            <br />
-            Chaque projet a son histoire. Voici les leurs.
-          </p>
-          <Asterisk />
-        </div>
-      </header>
-      <ProjectArchive />
+      <PageHero eyebrow="Réalisations" title="Des idées," em="devenues réelles." index={String(projects.length)}>
+        <p>
+          Sites immersifs, boutiques, applications, plateformes métier et data. Ouvrez une fiche pour
+          explorer le site en direct, sur ordinateur, tablette et mobile.
+        </p>
+      </PageHero>
+      <ProjectsExplorer />
     </>
   );
 }

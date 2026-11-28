@@ -2,14 +2,15 @@ import type { Metadata } from "next";
 import { existsSync } from "node:fs";
 import { join } from "node:path";
 import localFont from "next/font/local";
-import Nav from "@/components/agency/Nav";
-import Footer from "@/components/agency/Footer";
-import MotionSystem from "@/components/agency/MotionSystem";
-import AgencyProvider from "@/components/agency/Provider";
-import MusicDock from "@/components/agency/MusicDock";
+import type { Viewport } from "next";
+import Nav from "@/components/honey/Nav";
+import Footer from "@/components/honey/Footer";
+import MotionSystem from "@/components/honey/MotionSystem";
+import Loader from "@/components/honey/Loader";
+import MotionProvider from "@/components/honey/Provider";
+import MusicDock from "@/components/honey/MusicDock";
 import { profile, stack } from "@/data/content";
-import "@/styles/tokens.css";
-import "@/styles/agency.css";
+import "@/styles/honey.css";
 
 const neueMontreal = localFont({
   src: [
@@ -61,10 +62,14 @@ const backgroundAudio = existsSync(
   ? "/audio/damso-sentimental.mp3"
   : null;
 
+export const viewport: Viewport = {
+  themeColor: "#2a0810",
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Daniel Guedegbe — Design & développement, de l’idée à l’impact",
+    default: "Daniel Guedegbe — Sites immersifs, applications & data, depuis Abidjan",
     template: `%s — ${profile.fullName}`,
   },
   description:
@@ -98,7 +103,7 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     images: [
       {
-        url: "/images/agency/og-agency.webp",
+        url: "/images/honey/og-honey.jpg",
         width: 1200,
         height: 630,
         alt: profile.fullName,
@@ -110,7 +115,7 @@ export const metadata: Metadata = {
     title: "Daniel Guedegbe — De l’idée à l’impact",
     description:
       "Design sensible, code solide : applications web et mobiles, data et systèmes sur mesure par Daniel Guedegbe, depuis Abidjan.",
-    images: ["/images/agency/og-agency.webp"],
+    images: ["/images/honey/og-honey.jpg"],
   },
   robots: {
     index: true,
@@ -157,10 +162,20 @@ export default function RootLayout({
       lang="fr"
       className={`${neueMontreal.variable} ${agencyDisplay.variable}`}
       data-scroll-behavior="smooth"
+      suppressHydrationWarning
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "try{if(sessionStorage.getItem('honey-loaded')!=='1')document.documentElement.classList.add('h-loading')}catch(e){}",
+          }}
+        />
+      </head>
       <body id="top">
-        <AgencyProvider>
-          <a href="#contenu" className="agency-skip">
+        <MotionProvider>
+          <Loader />
+          <a href="#contenu" className="h-skip">
             Aller au contenu
           </a>
           <script
@@ -175,7 +190,7 @@ export default function RootLayout({
           <Footer />
           {backgroundAudio && <MusicDock src={backgroundAudio} />}
           <MotionSystem />
-        </AgencyProvider>
+        </MotionProvider>
       </body>
     </html>
   );

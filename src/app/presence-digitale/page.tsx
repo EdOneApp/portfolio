@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Label, Pill } from "@/components/agency/ui";
+import { Eyebrow as Label, Btn as Pill, PageHero } from "@/components/honey/ui";
 export const metadata: Metadata = {
   title: "Votre présence digitale, enfin visible",
   description:
@@ -10,21 +10,17 @@ export const metadata: Metadata = {
 export default function Presence() {
   return (
     <>
-      <header className="agency-page-head presence-head">
-        <Label>VOTRE PROCHAINE RENCONTRE CLIENT COMMENCE EN LIGNE.</Label>
-        <h1>
-          Faites-vous trouver.
-          <br />
-          <em>Donnez-leur envie.</em>
-        </h1>
-        <p className="presence-intro">
-          Vos clients vous cherchent sur Google et sur TikTok. Votre entreprise
-          y est-elle visible ? Je vous aide à construire une présence qui
-          présente votre activité, rassure et donne envie de vous contacter.
+      <PageHero eyebrow="Présence digitale" title="Faites-vous trouver." em="Donnez-leur envie.">
+        <p>
+          Vos clients vous cherchent sur Google et sur TikTok. Votre entreprise y est-elle visible ?
+          Je vous aide à construire une présence qui présente votre activité, rassure et donne envie
+          de vous contacter.
         </p>
-        <Pill href="/diagnostic">Tester ma présence gratuitement</Pill>
-      </header>
-      <section className="agency-section presence-packs">
+        <div className="h-hero-actions">
+          <Pill href="/diagnostic" variant="gold">Tester ma présence gratuitement</Pill>
+        </div>
+      </PageHero>
+      <section className="h-section presence-packs">
         <article className="presence-pack" data-reveal>
           <div>
             <Label>OFFRE 01 / GOOGLE & WEB</Label>
@@ -51,7 +47,7 @@ export default function Presence() {
                 à vos recherches cibles.
               </li>
             </ul>
-            <Pill href="/contact">Construire ma présence Google</Pill>
+            <Pill href="/devis?type=presence">Construire ma présence Google</Pill>
           </div>
           <Image
             src="/images/agency/presence-google.webp"
@@ -86,7 +82,7 @@ export default function Presence() {
                 sans studio.
               </li>
             </ul>
-            <Pill href="/contact">Faire vivre mes réseaux</Pill>
+            <Pill href="/devis?type=pages">Faire vivre mes réseaux</Pill>
           </div>
           <Image
             src="/images/agency/presence-social.webp"
@@ -97,7 +93,7 @@ export default function Presence() {
           />
         </article>
       </section>
-      <section className="agency-section presence-combo" data-reveal>
+      <section className="h-section presence-combo" data-reveal>
         <Label>UNE OFFRE OU LES DEUX. SELON VOTRE BESOIN.</Label>
         <h2>
           Google rassure.
@@ -112,7 +108,7 @@ export default function Presence() {
         </p>
         <div className="presence-links">
           <Pill href="/diagnostic">Faire le test gratuit</Pill>
-          <Pill href="/contact">Demander mon diagnostic gratuit</Pill>
+          <Pill href="/devis?type=presence" variant="ghost">Demander un devis</Pill>
         </div>
         <p className="presence-note">
           Maquettes illustratives d’une entreprise fictive. Aucun classement
