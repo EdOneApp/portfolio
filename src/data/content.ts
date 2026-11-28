@@ -566,17 +566,17 @@ export const projects: Project[] = [
   {
     slug: "myoctogone",
     title: "MyOctogone",
-    category: "Site corporate multisectoriel",
+    category: "Site de groupe · expérience 3D immersive",
     description:
-      "Refonte du site du groupe Octogone à Abidjan : présentation de huit filiales, galerie filtrable de 17 projets, interfaces en français et en anglais, animations et écrans en perspective. Site responsive construit avec Astro, React, TypeScript et Tailwind CSS, avec formulaire WhatsApp, prise de rendez-vous Cal.com, données structurées et sitemaps bilingues. Déploiement automatisé sur GitHub Pages et domaine personnalisé en HTTPS.",
-    tags: ["Astro", "React", "TypeScript", "Tailwind CSS", "SEO"],
+      "Refonte complète du site du groupe Octogone à Abidjan, « La Boîte à Génies ». Loader 3D où le monogramme s’assemble pendant que les huit filiales s’allument, accueil en octogone 3D interactif (survol et clic pour entrer dans une filiale), puis une page immersive par filiale avec sa propre scène Three.js : écrans des réalisations en orbite pour la technologie, immeuble qui passe du plan au béton sous une grue pour le BTP, terminal à conteneurs et navire pour la logistique, histogramme et courbe de croissance pour la finance, champ qui pousse au défilement pour l’agro-alimentaire, boucle routière de nuit pour le transport, livre ouvert et savoirs en orbite pour la formation, dôme radar pour la sécurité. Le pôle tech présente 26 réalisations filtrables avec vue intégrée des sites en direct (ordinateur, tablette, mobile), les services, les formules d’accompagnement et un assistant de devis en quatre étapes envoyé sur WhatsApp. Astro, React Three Fiber, Lenis, bilingue français/anglais, responsive, déployé sur GitHub Pages en HTTPS.",
+    tags: ["Astro", "React Three Fiber", "Three.js", "TypeScript", "WhatsApp"],
     link: "https://myoctogone.com/",
-    linkLabel: "Voir MyOctogone",
+    linkLabel: "Explorer MyOctogone",
     image: "/images/myoctogone-web.webp",
     mobileImage: "/images/myoctogone-mobile.webp",
     stats: [
-      { value: "8", label: "Filiales présentées" },
-      { value: "17", label: "Projets dans la galerie" },
+      { value: "8", label: "Scènes 3D, une par filiale" },
+      { value: "26", label: "Réalisations en vue intégrée" },
       { value: "2", label: "Langues : français et anglais" },
     ],
     featured: true,
